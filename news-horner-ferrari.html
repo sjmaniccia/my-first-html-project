@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================
+  LIGHTS OUT — News Post
+  "Christian Horner to Ferrari? Here's What We Actually Know"
+  Published October 8, 2026
+  ==========================================================
+
+  HOW THIS PAGE WORKS
+  -------------------
+  A news post, built just like the others: plain HTML you write
+  and edit by hand. The comments throughout explain each part.
+
+  Shared files:
+    styles.css  Post page styles are in section 12 "POST PAGES".
+    script.js   Only animates the start lights on this page.
+
+  Nothing on this page has an id that script.js needs, so you
+  can edit anything without breaking the script.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Browser tab text. Format: post title | blog name -->
+  <title>Christian Horner to Ferrari? Here&#x27;s What We Actually Know | Lights Out</title>
+
+  <!-- Summary for search engines -->
+  <meta name="description" content="Christian Horner says Ferrari is the one team he&#x27;d join without owning a piece of it. With Ferrari struggling, is a move really on the cards?">
+
+  <!-- Shared stylesheet and script, same as every page -->
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ======================================================
+       HEADER
+       Same as every page. "News" is marked as the current
+       section with aria-current, since this post belongs there.
+       ====================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Brand links back to the homepage -->
+      <a class="brand" href="index.html">
+        <div class="brand-row">
+          <span class="brand-name">Lights <span>Out</span></span>
+
+          <!-- Start lights, animated by script.js -->
+          <span class="start-lights" aria-hidden="true" title="Replay start">
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+          </span>
+        </div>
+        <span class="tagline">An unofficial fan blog covering the 2026 F1 season</span>
+      </a>
+
+      <!-- Main navigation. Each href is a file in this folder. -->
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="races.html">Race Recaps</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="news.html" aria-current="page">News</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ======================================================
+       THE POST
+       ====================================================== -->
+  <article class="post">
+
+    <!-- Back to the list of all news posts -->
+    <a class="back-link" href="news.html">← All news</a>
+
+    <!-- ---------- POST HEADER ----------
+         Category tags + date, headline, one-line summary. -->
+    <header class="post-header">
+      <span class="meta">
+        <span class="tag">News</span> ·
+        <span class="tag">Rumour Mill</span> ·
+        <time datetime="2026-10-08">October 8, 2026</time>
+      </span>
+      <h1>Christian Horner to Ferrari? Here&#x27;s What We Actually Know</h1>
+      <p class="dek">Horner says Ferrari is his dream job, and Ferrari&#x27;s season has gone flat. Here&#x27;s what&#x27;s fact, what&#x27;s rumour, and what might happen next.</p>
+    </header>
+
+
+    <!-- ---------- AT A GLANCE ----------
+         Key facts. Each <dt> is a label, the <dd> after it the value. -->
+    <dl class="quick-facts">
+      <div>
+        <dt>Horner at Red Bull</dt>
+        <dd>20 years in charge</dd>
+      </div>
+      <div>
+        <dt>His titles</dt>
+        <dd>8 drivers’, 6 constructors’</dd>
+      </div>
+      <div>
+        <dt>Left Red Bull</dt>
+        <dd>July 2025</dd>
+      </div>
+      <div>
+        <dt>Ferrari wins in 2026</dt>
+        <dd>2 (Barcelona, Silverstone)</dd>
+      </div>
+      <div>
+        <dt>Ferrari in the standings</dt>
+        <dd>2nd, behind Mercedes</dd>
+      </div>
+      <div>
+        <dt>Status</dt>
+        <dd>No deal announced</dd>
+      </div>
+    </dl>
+
+
+    <!-- ---------- PHOTO ----------
+         Space for one photo, with a credit caption under it.
+         Right now it shows a placeholder box.
+
+         TO ADD A PHOTO:
+         1. Find one on commons.wikimedia.org with an OK license:
+            CC BY, CC BY-SA, CC0 or Public Domain. Never use photos
+            from Google Images, F1.com, team or news sites.
+         2. Click "Use this file" on its page for the author and
+            license, and download it.
+         3. Save it in an "images" folder next to this file.
+         4. Delete the photo-placeholder <div>, uncomment the <img>,
+            set src and alt, and fill in the caption.
+         The credit caption is what the license requires, so keep it.
+
+         Styled in styles.css, section 12 (.post-photo). -->
+    <figure class="post-photo">
+
+      <!-- Placeholder box. FIXME: replace with a real photo -->
+      <div class="photo-placeholder">Photo goes here</div>
+
+      <!-- The real image. Remove the comment marks to use it.
+      <img src="images/your-photo.jpg"
+           alt="Describe what the photo shows">
+      -->
+
+      <!-- Caption and credit. FIXME: fill in once you've picked a photo -->
+      <figcaption>
+        <span class="photo-caption">[What the photo shows]</span>
+        <span class="photo-credit">
+          Photo: [Photographer's name],
+          <a href="[license link]">[license, e.g. CC BY-SA 4.0]</a>,
+          via <a href="[photo's Commons page]">Wikimedia Commons</a>
+        </span>
+      </figcaption>
+    </figure>
+
+
+    <!-- ---------- THE STORY ----------
+         Each <h2> starts a section, each <p> is a paragraph. -->
+    <div class="post-body">
+
+      <p>Every F1 season needs a rumour that won&#x27;t go away, and this year&#x27;s is Christian Horner at Ferrari. Nothing has been announced, and Ferrari hasn&#x27;t said a word. But Horner himself has just poured fuel on the fire.</p>
+
+      <h2>Why everyone is talking about it</h2>
+
+      <p>In an interview with The Times around the Baku weekend, Horner said Ferrari is the only team he&#x27;d join without owning a stake in it. Until now, he&#x27;d made a shareholding a condition of his next job. He called Ferrari the most important brand in the sport, a sleeping giant, and said he doesn&#x27;t need to go back to being a salaried employee anywhere else.</p>
+
+      <p>That&#x27;s about as close as anyone in F1 gets to publicly applying for a job.</p>
+
+      <h2>Horner&#x27;s story so far</h2>
+
+      <p>Horner ran Red Bull for 20 years, winning eight drivers&#x27; titles and six constructors&#x27; titles. Red Bull removed him as CEO and team principal after the 2025 British Grand Prix, with Laurent Mekies taking over, and a later exit agreement ended all his ties with the company.</p>
+
+      <p>Reports at the time said the payout was around $100 million, and that he could return to the grid by mid-2026. Since then he&#x27;s been linked with Alpine, Haas and even starting his own team, but nothing has happened yet.</p>
+
+      <h2>Ferrari&#x27;s problem</h2>
+
+      <p>Ferrari started the season brightly. Lewis Hamilton won in Barcelona, his first win in red, and Charles Leclerc followed it up at Silverstone. Since then, things have gone flat. Ferrari&#x27;s power unit has fallen well behind Mercedes, and the other teams have caught up on the chassis side.</p>
+
+      <p>Ferrari is still second in the constructors&#x27; championship, but a long way behind Mercedes. And the pressure has landed on team principal Fred Vasseur. This year&#x27;s SF-26 is the first Ferrari developed fully on his watch, so there&#x27;s no blaming the previous regime.</p>
+
+      <h2>So will it happen?</h2>
+
+      <p>Honestly, nobody outside Maranello knows. Some analysts, like former team manager Peter Windsor, think Horner will end up there. Reports in Italy have suggested the talks are more than gossip, but none of it has been confirmed.</p>
+
+      <p>What&#x27;s clear is that both pieces are in place: a team under pressure to change something, and the most successful team boss of the last two decades saying he wants the job. Whether Ferrari picks up the phone is another matter.</p>
+
+      <!-- YOUR TAKE
+           Your opinion is what makes a fan blog worth reading.
+           FIXME: write your take, or delete this box -->
+      <h2>My take</h2>
+
+      <div class="callout">
+        <p>Add your own opinion here.</p>
+      </div>
+
+    </div>
+  </article>
+
+
+  <!-- ======================================================
+       FOOTER
+       Same disclaimer as every page.
+       ====================================================== -->
+  <footer>
+    Unofficial fan site. Not affiliated with Formula 1, Formula One Licensing BV, or the FIA.
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================
+  LIGHTS OUT — News Post
+  "Audi's First Season: Slow Start, Big Plans"
+  Published October 8, 2026
+  ==========================================================
+
+  HOW THIS PAGE WORKS
+  -------------------
+  A news post, built just like the others: plain HTML you write
+  and edit by hand. The comments throughout explain each part.
+
+  Shared files:
+    styles.css  Post page styles are in section 12 "POST PAGES".
+    script.js   Only animates the start lights on this page.
+
+  Nothing on this page has an id that script.js needs, so you
+  can edit anything without breaking the script.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Browser tab text. Format: post title | blog name -->
+  <title>Audi&#x27;s First Season: Slow Start, Big Plans | Lights Out</title>
+
+  <!-- Summary for search engines -->
+  <meta name="description" content="Audi joined F1 this year with its own team and its own engine. Sixteen races in, here&#x27;s how the debut season is going.">
+
+  <!-- Shared stylesheet and script, same as every page -->
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ======================================================
+       HEADER
+       Same as every page. "News" is marked as the current
+       section with aria-current, since this post belongs there.
+       ====================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Brand links back to the homepage -->
+      <a class="brand" href="index.html">
+        <div class="brand-row">
+          <span class="brand-name">Lights <span>Out</span></span>
+
+          <!-- Start lights, animated by script.js -->
+          <span class="start-lights" aria-hidden="true" title="Replay start">
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+          </span>
+        </div>
+        <span class="tagline">An unofficial fan blog covering the 2026 F1 season</span>
+      </a>
+
+      <!-- Main navigation. Each href is a file in this folder. -->
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="races.html">Race Recaps</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="news.html" aria-current="page">News</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ======================================================
+       THE POST
+       ====================================================== -->
+  <article class="post">
+
+    <!-- Back to the list of all news posts -->
+    <a class="back-link" href="news.html">← All news</a>
+
+    <!-- ---------- POST HEADER ----------
+         Category tags + date, headline, one-line summary. -->
+    <header class="post-header">
+      <span class="meta">
+        <span class="tag">News</span> ·
+        <span class="tag">Teams</span> ·
+        <time datetime="2026-10-08">October 8, 2026</time>
+      </span>
+      <h1>Audi&#x27;s First Season: Slow Start, Big Plans</h1>
+      <p class="dek">A works team with its own power unit, a rough first half and signs of life since the summer. Audi&#x27;s debut is all about 2030.</p>
+    </header>
+
+
+    <!-- ---------- AT A GLANCE ----------
+         Key facts. Each <dt> is a label, the <dd> after it the value. -->
+    <dl class="quick-facts">
+      <div>
+        <dt>Team</dt>
+        <dd>Audi Revolut F1 Team</dd>
+      </div>
+      <div>
+        <dt>Base</dt>
+        <dd>Hinwil, Switzerland</dd>
+      </div>
+      <div>
+        <dt>Car</dt>
+        <dd>R26, with Audi’s own engine</dd>
+      </div>
+      <div>
+        <dt>Drivers</dt>
+        <dd>Nico Hülkenberg, Gabriel Bortoleto</dd>
+      </div>
+      <div>
+        <dt>Points</dt>
+        <dd>17, 8th in constructors</dd>
+      </div>
+      <div>
+        <dt>Best finish</dt>
+        <dd>8th (three times)</dd>
+      </div>
+    </dl>
+
+
+    <!-- ---------- PHOTO ----------
+         Space for one photo, with a credit caption under it.
+         Right now it shows a placeholder box.
+
+         TO ADD A PHOTO:
+         1. Find one on commons.wikimedia.org with an OK license:
+            CC BY, CC BY-SA, CC0 or Public Domain. Never use photos
+            from Google Images, F1.com, team or news sites.
+         2. Click "Use this file" on its page for the author and
+            license, and download it.
+         3. Save it in an "images" folder next to this file.
+         4. Delete the photo-placeholder <div>, uncomment the <img>,
+            set src and alt, and fill in the caption.
+         The credit caption is what the license requires, so keep it.
+
+         Styled in styles.css, section 12 (.post-photo). -->
+    <figure class="post-photo">
+
+      <!-- Placeholder box. FIXME: replace with a real photo -->
+      <!-- <div class="photo-placeholder">Photo goes here</div> -->
+
+      
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/F1_2026%2C_Audi_F1_Team%2C_Audi_R26%2C_Nico_H%C3%BClkenberg%2C_Spa_Francorchamps_%2855425960870%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+           alt="Niko Hulkenberg driving the Audi R26 at the 2026 Belgian Grand Prix, Spa-Francorchamps">
+      
+
+      <!-- Caption and credit. FIXME: fill in once you've picked a photo -->
+      <figcaption>
+        <span class="photo-caption">[Nico Hulkenberg driving the Audi R26 at the 2026 Belgian Grand Prix, Spa-Francorchamps]</span>
+        <span class="photo-credit">
+          Photo: [Der Alf],
+          <a href="[license link]">[license, e.g. CC BY-SA 4.0]</a>,
+          via <a href="[photo's Commons page]">Wikimedia Commons</a>
+        </span>
+      </figcaption>
+    </figure>
+
+
+    <!-- ---------- THE STORY ----------
+         Each <h2> starts a section, each <p> is a paragraph. -->
+    <div class="post-body">
+
+      <p>One of the biggest stories of 2026 has been happening in the midfield. Audi joined Formula 1 this year, not as an engine supplier for someone else, but as a full works team with its own chassis and its own power unit.</p>
+
+      <h2>How Audi got here</h2>
+
+      <p>Audi announced back in 2022 that it would enter F1 when the new engine rules arrived in 2026, and that the Sauber team would become its works squad. In 2024 it took full ownership of Sauber and brought in former Ferrari boss Mattia Binotto to lead the project.</p>
+
+      <p>The team is still based at Sauber&#x27;s old home in Hinwil, Switzerland, and races as the Audi Revolut F1 Team, with Nico Hülkenberg and Gabriel Bortoleto driving the R26.</p>
+
+      <h2>A rough first half</h2>
+
+      <p>It started brilliantly. Bortoleto finished ninth in Melbourne and scored points on the team&#x27;s debut, even though Hülkenberg&#x27;s car didn&#x27;t make the start. Then came a long run without scoring.</p>
+
+      <p>Reliability hurt. Bortoleto didn&#x27;t start in China, and Hülkenberg had a miserable spell: overheating in Miami, and in Barcelona, gravel thrown up by Liam Lawson&#x27;s car hit his safety switch and cut the car&#x27;s electrics while he was running for ninth.</p>
+
+      <h2>Signs of life</h2>
+
+      <p>Upgrades before the summer break turned things around. Bortoleto finished eighth at both Silverstone and Spa, and Hülkenberg scored his first points with ninth in Hungary. Since the break, Hülkenberg added eighth at Zandvoort and tenth in Madrid, and Bortoleto says the Baku upgrade worked as planned.</p>
+
+      <p>That leaves Audi eighth in the constructors&#x27; championship with 17 points after 16 races. Bortoleto has been the stronger of the two on Sundays, but it&#x27;s been close in qualifying.</p>
+
+      <h2>Not everything has been smooth</h2>
+
+      <p>There&#x27;s been upheaval off track too. Team principal Jonathan Wheatley left during the season, and Binotto now runs the team as both team chief and team principal.</p>
+
+      <p>Audi has also been one of the louder voices in the engine debate. It joined F1 for these hybrid rules, and it opposed bringing in a new engine formula early.</p>
+
+      <h2>The long game</h2>
+
+      <p>Nobody at Audi expected to win straight away. The team calls 2026 and 2027 foundation years, and the stated goal is to win a world championship by 2030. Judged against that, a points finish on debut and a stronger second half is a decent start.</p>
+
+      <!-- YOUR TAKE
+           Your opinion is what makes a fan blog worth reading.
+           FIXME: write your take, or delete this box -->
+      <h2>My take</h2>
+
+      <div class="callout">
+        <p>F1 needed another engine manufacturer to bring competition and innovation to the sport after losing Renault. The sacrifices made
+          to bring Audi in have been huge, and the team has been through a lot of growing pains. I wonder if the changes made to the sport
+        are worth bringing in a midfield team that looks like it may not succeed.</p>
+      </div>
+
+    </div>
+  </article>
+
+
+  <!-- ======================================================
+       FOOTER
+       Same disclaimer as every page.
+       ====================================================== -->
+  <footer>
+    Unofficial fan site. Not affiliated with Formula 1, Formula One Licensing BV, or the FIA.
+  </footer>
+
+</body>
+</html>

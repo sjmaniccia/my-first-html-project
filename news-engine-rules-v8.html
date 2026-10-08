@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================
+  LIGHTS OUT — News Post
+  "The 2026 Engines Aren't Working. Bring Back the V8s."
+  Published 8 October 2026
+  ==========================================================
+
+  HOW THIS PAGE WORKS
+  -------------------
+  A news / opinion post. It's built exactly like a race recap,
+  just without the results table: everything here is plain HTML
+  you write and edit by hand.
+
+  Shared files:
+    styles.css  Post page styles are in section 12 "POST PAGES".
+    script.js   Only animates the start lights on this page.
+
+  MAKING ANOTHER NEWS POST
+  ------------------------
+  1. Copy this file and rename it, e.g. news-driver-market-2027.html
+  2. Change the <title> and description in <head>
+  3. Replace the header, facts box and story
+  4. Add a card for it at the top of news.html
+  5. Add it to the homepage "Latest" grid (index.html)
+
+  Nothing on this page has an id that script.js needs, so you
+  can edit anything without breaking the script.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Browser tab text. Format: post title | blog name -->
+  <title>The 2026 Engines Aren't Working. Bring Back the V8s. | Lights Out</title>
+
+  <!-- Summary for search engines -->
+  <meta name="description" content="Hot take: F1's 2026 power units have been a letdown, and the sport should get back to V8s as soon as it can.">
+
+  <!-- Shared stylesheet, same as every page -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Shared script. "defer" runs it after the page is built.
+       On this page it only animates the start lights. -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ======================================================
+       HEADER
+       Same as every page. "News" is marked as the current
+       section with aria-current, since this post belongs there.
+       ====================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Brand links back to the homepage -->
+      <a class="brand" href="index.html">
+        <div class="brand-row">
+          <span class="brand-name">Lights <span>Out</span></span>
+
+          <!-- Start lights, animated by script.js -->
+          <span class="start-lights" aria-hidden="true" title="Replay start">
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+          </span>
+        </div>
+        <span class="tagline">An unofficial fan blog covering the 2026 F1 season</span>
+      </a>
+
+      <!-- Main navigation. Each href is a file in this folder. -->
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="races.html">Race Recaps</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="news.html" aria-current="page">News</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ======================================================
+       THE POST
+       <article> marks a self-contained piece of writing.
+       ".post" narrows it to a comfortable reading width.
+       ====================================================== -->
+  <article class="post">
+
+    <!-- Back to the list of all news posts -->
+    <a class="back-link" href="news.html">← All news</a>
+
+    <!-- ---------- POST HEADER ----------
+         Category tags + date, headline, one-line summary. -->
+    <header class="post-header">
+      <span class="meta">
+        <span class="tag">News</span> ·
+        <span class="tag">Hot Take</span> ·
+        <time datetime="2026-10-08">October 8, 2026</time>
+      </span>
+      <h1>The 2026 Engines Aren't Working. Bring Back the V8s.</h1>
+      <p class="dek">The new hybrid rules were supposed to be F1's future. Most of a season in, they've mostly given us battery management. The V8 plan can't come soon enough.</p>
+    </header>
+
+
+    <!-- ---------- AT A GLANCE ----------
+         Reuses the quick-facts box style from the race recaps.
+         Each <dt> is a label, the <dd> after it is the value. -->
+    <dl class="quick-facts">
+      <div>
+        <dt>2026 engine</dt>
+        <dd>1.6L V6 turbo hybrid</dd>
+      </div>
+      <div>
+        <dt>Power split</dt>
+        <dd>About 50% engine, 50% battery</dd>
+      </div>
+      <div>
+        <dt>Reported next engine</dt>
+        <dd>3.0L turbo V8</dd>
+      </div>
+      <div>
+        <dt>Electric power</dt>
+        <dd>350kW now, ~100kW planned</dd>
+      </div>
+      <div>
+        <dt>Target date</dt>
+        <dd>2030, or 2031 at the latest</dd>
+      </div>
+    </dl>
+
+
+    <!-- ---------- PHOTO ----------
+         Space for one photo, with a credit caption under it.
+         Right now it shows a placeholder box.
+
+         TO ADD A PHOTO:
+         1. Find one on commons.wikimedia.org with an OK license:
+            CC BY, CC BY-SA, CC0 or Public Domain. Never use photos
+            from Google Images, F1.com, team or news sites.
+         2. Click "Use this file" on its page for the author and
+            license, and download it.
+         3. Save it in an "images" folder next to this file.
+         4. Delete the photo-placeholder <div>, uncomment the <img>,
+            set src and alt, and fill in the caption.
+         The credit caption is what the license requires, so keep it.
+
+         Styled in styles.css, section 12 (.post-photo). -->
+    <figure class="post-photo">
+
+      <!-- Placeholder box. FIXME: replace with a real photo
+      <div class="photo-placeholder">Photo goes here</div> -->
+
+      
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/2026_f1_regulation.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+           alt="Mockup of a 2026 F1 car showing the new hybrid power unit and battery pack">
+      
+
+      <!-- Caption and credit. FIXME: fill in once you've picked a photo -->
+      <figcaption>
+        <span class="photo-caption">Mockup of a 2026 F1 car showing the new hybrid power unit and battery pack</span>
+        <span class="photo-credit">
+          Photo: [BlackFlash06],
+          <a href="[license link]">[license, e.g. CC BY-SA 4.0]</a>,
+          via <a href="[photo's Commons page]">Wikimedia Commons</a>
+        </span>
+      </figcaption>
+    </figure>
+
+
+    <!-- ---------- THE STORY ----------
+         Each <h2> starts a new section, each <p> is a paragraph. -->
+    <div class="post-body">
+
+      <h2>What changed this year</h2>
+
+      <p>2026 brought the biggest rules shake-up in F1's history. The engines kept the 1.6-litre turbo V6, but the balance flipped. Electric power nearly tripled to 350kW, the MGU-H was dropped, and the cars now get roughly half their power from the battery. Everything runs on fully sustainable fuel.</p>
+
+      <p>On paper, that's the sport getting road-relevant and green at the same time. On track, it's been a different story.</p>
+
+      <h2>What's gone wrong</h2>
+
+      <p>Charging and deploying the battery has turned into the main event. Races are shaped by when drivers harvest energy and when they spend it, not just who's fastest through the corners. Drivers haven't held back, either. Max Verstappen has been so unhappy that he's openly questioned his future in the sport.</p>
+
+      <p>The FIA has already had to step in. After just three races, officials tweaked the rules to cut back how much the electric side decides things, especially in qualifying. When you're patching a brand-new formula three races in, something went wrong at the drawing board.</p>
+
+      <h2>The V8s are (probably) coming back</h2>
+
+      <p>Here's the good news. In May, FIA president Mohammed Ben Sulayem said a switch back to V8s with only minor electrification is a matter of time. His target is 2030, if enough manufacturers agree, and 2031 regardless.</p>
+
+      <p>Then in late September, reports said the FIA and the manufacturers had agreed on a framework: a 3.0-litre V8 with a smaller turbo, electric power cut from 350kW to around 100kW, and lighter cars. Nothing is official until it goes through the approval process, but it's the clearest sign yet that the V8 is really happening.</p>
+
+
+      <!-- ---------- THE HOT TAKE ----------
+           Your opinion, set apart in the callout box.
+           Edit the wording so it sounds like you. -->
+      <h2>My take</h2>
+
+      <div class="callout">
+        <p><strong>These rules aren't great, and F1 should go back to V8s.</strong></p>
+
+        <p>F1 is supposed to be about the best drivers pushing the fastest cars to the limit. A formula where the smart move is lifting off to recharge a battery isn't that. I watch to see who's bravest on the brakes, not who managed their energy best.</p>
+
+        <p>And then there's the sound. Anyone who heard the 2006 to 2013 cars in person knows. That scream was half the reason people fell in love with this sport. The hybrids have never come close.</p>
+
+        <p>A V8 is simpler, lighter and cheaper to build, and it would still run on sustainable fuel, so the green argument doesn't go away. My only worry is the reported plan keeps a turbo. If we're going back, let's go all the way.</p>
+
+        <p>2030 can't come soon enough.</p>
+      </div>
+
+
+      <h2>The other side</h2>
+
+      <p>To be fair, not everyone agrees. Manufacturers like Audi joined F1 under these hybrid rules, and an earlier push for V10s stalled when manufacturers objected. Some argue a V8 is a nostalgia trip that has little to do with the cars people actually drive. Others point out the 2026 rules are only one season old, and the tweaks are already helping.</p>
+
+      <p>Fair points. I just think the racing should come first.</p>
+
+      <!-- FIXME: optional. Ask readers to weigh in, e.g. link to
+           your social media so they can tell you if they agree. -->
+
+    </div>
+  </article>
+
+
+  <!-- ======================================================
+       FOOTER
+       Same disclaimer as every page.
+       ====================================================== -->
+  <footer>
+    Unofficial fan site. Not affiliated with Formula 1, Formula One Licensing BV, or the FIA.
+  </footer>
+
+</body>
+</html>

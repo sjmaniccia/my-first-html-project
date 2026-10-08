@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================
+  LIGHTS OUT — Race Recap, Round 15
+  Azerbaijan Grand Prix, September 26, 2026
+  ==========================================================
+
+  HOW THIS PAGE WORKS
+  -------------------
+  A race recap. Everything here is plain HTML you can edit by
+  hand: the story, the quick facts and the results table are all
+  typed into the page, so they stay fixed as a record of the race.
+
+  Shared files:
+    styles.css  Post page styles are in section 12 "POST PAGES".
+    script.js   Only animates the start lights on this page.
+
+  Nothing on this page has an id that script.js needs, so you
+  can edit anything without breaking the script.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Browser tab text. Format: post title | blog name -->
+  <title>Russell Edges Verstappen by Two Tenths in Baku | Lights Out</title>
+
+  <!-- Summary for search engines -->
+  <meta name="description" content="Race recap: Azerbaijan Grand Prix 2026. Two safety cars, a Piastri mistake and a 0.196-second finish. Russell just holds off Verstappen.">
+
+  <!-- Shared stylesheet and script, same as every page -->
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ======================================================
+       HEADER
+       Same on every page. "Race Recaps" is marked current
+       with aria-current, since every recap belongs there.
+       ====================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Brand links back to the homepage -->
+      <a class="brand" href="index.html">
+        <div class="brand-row">
+          <span class="brand-name">Lights <span>Out</span></span>
+
+          <!-- Start lights, animated by script.js -->
+          <span class="start-lights" aria-hidden="true" title="Replay start">
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+          </span>
+        </div>
+        <span class="tagline">An unofficial fan blog covering the 2026 F1 season</span>
+      </a>
+
+      <!-- Main navigation. Each href is a file in this folder. -->
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="races.html" aria-current="page">Race Recaps</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ======================================================
+       THE POST
+       ====================================================== -->
+  <article class="post">
+
+    <!-- Back to the list of all recaps -->
+    <a class="back-link" href="races.html">← All race recaps</a>
+
+    <!-- ---------- POST HEADER ----------
+         Category, round + date, headline, one-line summary. -->
+    <header class="post-header">
+      <span class="meta">
+        <span class="tag">Race Recap</span> ·
+        Round 15 ·
+        <time datetime="2026-09-26">September 26, 2026</time>
+      </span>
+      <h1>Russell Edges Verstappen by Two Tenths in Baku</h1>
+      <p class="dek">Two safety cars wiped out George Russell&#x27;s lead, but he held off a charging Max Verstappen to the line in a Red Bull double-podium race.</p>
+    </header>
+
+
+    <!-- ---------- QUICK FACTS ----------
+         The key numbers at a glance. Each <dt> is a label and
+         the <dd> right after it is its value. -->
+    <dl class="quick-facts">
+      <div>
+        <dt>Winner</dt>
+        <dd>George Russell, Mercedes</dd>
+      </div>
+      <div>
+        <dt>Podium</dt>
+        <dd>Russell · Verstappen · Hadjar</dd>
+      </div>
+      <div>
+        <dt>Pole</dt>
+        <dd>George Russell</dd>
+      </div>
+      <div>
+        <dt>Winning margin</dt>
+        <dd>0.196s</dd>
+      </div>
+      <div>
+        <dt>Circuit</dt>
+        <dd>Baku City Circuit</dd>
+      </div>
+      <div>
+        <dt>Did not finish</dt>
+        <dd>Bottas, Colapinto, Gasly, Norris, Albon, Alonso, Stroll</dd>
+      </div>
+    </dl>
+
+
+    <!-- ---------- PHOTO ----------
+         Space for one photo, with a credit caption under it.
+         Right now it shows a placeholder box.
+
+         TO ADD A PHOTO:
+         1. Find one on commons.wikimedia.org with an OK license:
+            CC BY, CC BY-SA, CC0 or Public Domain. Never use photos
+            from Google Images, F1.com, team or news sites.
+         2. Click "Use this file" on its page for the author and
+            license, and download it.
+         3. Save it in an "images" folder next to this file.
+         4. Delete the photo-placeholder <div>, uncomment the <img>,
+            set src and alt, and fill in the caption.
+         The credit caption is what the license requires, so keep it.
+
+         Styled in styles.css, section 12 (.post-photo). -->
+    <figure class="post-photo">
+
+      <!-- Placeholder box. FIXME: replace with a real photo -->
+      <div class="photo-placeholder">Photo goes here</div>
+
+      <!-- The real image. Remove the comment marks to use it.
+      <img src="images/your-photo.jpg"
+           alt="Describe what the photo shows">
+      -->
+
+      <!-- Caption and credit. FIXME: fill in once you've picked a photo -->
+      <figcaption>
+        <span class="photo-caption">[What the photo shows]</span>
+        <span class="photo-credit">
+          Photo: [Photographer's name],
+          <a href="[license link]">[license, e.g. CC BY-SA 4.0]</a>,
+          via <a href="[photo's Commons page]">Wikimedia Commons</a>
+        </span>
+      </figcaption>
+    </figure>
+
+
+    <!-- ---------- THE STORY ----------
+         Each <h2> starts a section, each <p> is a paragraph. -->
+    <div class="post-body">
+
+      <p>That was close. George Russell won in Baku by 0.196 seconds over Max Verstappen, his third win of the year. Isack Hadjar, back from his wrist injury, completed a double podium for Red Bull.</p>
+
+      <h2>Red Bull on the charge</h2>
+
+      <p>Russell kept the lead from pole while Oscar Piastri passed Charles Leclerc for second. Both Red Bulls then got past Leclerc, with Verstappen ahead of Hadjar in third. Red Bull kept them in that order instead of letting Hadjar back by, reportedly to give Verstappen a shot at Piastri and Russell.</p>
+
+      <p>Kimi Antonelli started 16th after damaging his suspension in qualifying, and was back in the top ten by lap 17.</p>
+
+      <h2>Two safety cars</h2>
+
+      <p>Alex Albon crashed into the barriers, bringing out a safety car that wiped out Russell&#x27;s lead of around eleven seconds. Russell and Verstappen both switched to softs, while Carlos Sainz lost out, having pitted just before.</p>
+
+      <p>Verstappen passed Piastri for second after the restart. Then Franco Colapinto locked up and hit his Alpine teammate Pierre Gasly, who then collided with Lando Norris, bringing out a second safety car.</p>
+
+      <h2>Piastri&#x27;s mistake</h2>
+
+      <p>On lap 40, Piastri locked up at Turn 1 defending from Hadjar and dropped all the way to 15th, which put Hadjar onto the podium.</p>
+
+      <h2>The finish</h2>
+
+      <p>Verstappen closed in hard over the final laps, and Russell held him off by less than two tenths. Russell said afterwards he lost power when he lifted for yellow flags after a late crash for Valtteri Bottas.</p>
+
+      <p>After the race, Colapinto&#x27;s unserved penalty became a five-place grid drop for the next race, and Gabriel Bortoleto dropped from 13th to 15th with a penalty for overtaking under yellow flags.</p>
+
+      <!-- YOUR TAKE
+           Space for your own opinion on the race.
+           FIXME: write your take, or delete this box -->
+      <div class="callout">
+        <p><strong>My take:</strong> Add your own thoughts on this race here.</p>
+      </div>
+
+
+      <!-- ---------- RESULTS TABLE ----------
+           From the official classification. class="dnf" dims a
+           row for a driver who didn't finish. -->
+      <h2>Race result</h2>
+
+      <div class="table-wrap">
+        <table class="results">
+          <thead>
+            <tr>
+              <th>Pos</th>
+              <th>Driver</th>
+              <th>Team</th>
+              <th class="num">Gap</th>
+              <th class="num">Pts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>George Russell</td><td>Mercedes</td><td class="num">1:38:02.143</td><td class="num">25</td></tr>
+            <tr><td>2</td><td>Max Verstappen</td><td>Red Bull Racing</td><td class="num">+0.196s</td><td class="num">18</td></tr>
+            <tr><td>3</td><td>Isack Hadjar</td><td>Red Bull Racing</td><td class="num">+10.704s</td><td class="num">15</td></tr>
+            <tr><td>4</td><td>Charles Leclerc</td><td>Ferrari</td><td class="num">+14.136s</td><td class="num">12</td></tr>
+            <tr><td>5</td><td>Kimi Antonelli</td><td>Mercedes</td><td class="num">+14.512s</td><td class="num">10</td></tr>
+            <tr><td>6</td><td>Lewis Hamilton</td><td>Ferrari</td><td class="num">+22.382s</td><td class="num">8</td></tr>
+            <tr><td>7</td><td>Arvid Lindblad</td><td>Racing Bulls</td><td class="num">+31.159s</td><td class="num">6</td></tr>
+            <tr><td>8</td><td>Esteban Ocon</td><td>Haas</td><td class="num">+31.189s</td><td class="num">4</td></tr>
+            <tr><td>9</td><td>Oliver Bearman</td><td>Haas</td><td class="num">+31.929s</td><td class="num">2</td></tr>
+            <tr><td>10</td><td>Carlos Sainz</td><td>Williams</td><td class="num">+32.416s</td><td class="num">1</td></tr>
+            <tr><td>11</td><td>Nico Hülkenberg</td><td>Audi</td><td class="num">+33.231s</td><td class="num">0</td></tr>
+            <tr><td>12</td><td>Liam Lawson</td><td>Racing Bulls</td><td class="num">+34.013s</td><td class="num">0</td></tr>
+            <tr><td>13</td><td>Oscar Piastri</td><td>McLaren</td><td class="num">+36.401s</td><td class="num">0</td></tr>
+            <tr><td>14</td><td>Sergio Pérez</td><td>Cadillac</td><td class="num">+41.400s</td><td class="num">0</td></tr>
+            <tr><td>15</td><td>Gabriel Bortoleto</td><td>Audi</td><td class="num">+44.230s</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>16</td><td>Valtteri Bottas</td><td>Cadillac</td><td class="num">DNF (accident)</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>NC</td><td>Franco Colapinto</td><td>Alpine</td><td class="num">DNF (collision damage)</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>NC</td><td>Pierre Gasly</td><td>Alpine</td><td class="num">DNF (collision)</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>NC</td><td>Lando Norris</td><td>McLaren</td><td class="num">DNF (collision)</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>NC</td><td>Alexander Albon</td><td>Williams</td><td class="num">DNF (accident)</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>NC</td><td>Fernando Alonso</td><td>Aston Martin</td><td class="num">DNF (water pressure)</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>NC</td><td>Lance Stroll</td><td>Aston Martin</td><td class="num">DNF (water pressure)</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="source-note">NC = not classified, DNS = did not start. Results from the official F1 classification.</p>
+
+    </div>
+
+
+    <!-- ---------- PREVIOUS / NEXT RACE ----------
+         Links to the recaps either side of this one, so readers
+         can click through the season in order.
+         Styled in styles.css, section 12 (.post-nav). -->
+    <nav class="post-nav" aria-label="More recaps">
+      <a class="post-nav-prev" href="recap-spanish-gp-2026.html"><span>← Previous race</span>Madrid</a>
+      <a class="post-nav-next" href="recap-bahrain-gp-malaysia-2026.html"><span>Next race →</span>Bahrain (Sepang)</a>
+    </nav>
+
+  </article>
+
+
+  <!-- ======================================================
+       FOOTER
+       ====================================================== -->
+  <footer>
+    Unofficial fan site. Not affiliated with Formula 1, Formula One Licensing BV, or the FIA.
+  </footer>
+
+</body>
+</html>

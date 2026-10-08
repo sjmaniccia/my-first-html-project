@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================
+  LIGHTS OUT — Race Recap, Round 3
+  Japanese Grand Prix, March 29, 2026
+  ==========================================================
+
+  HOW THIS PAGE WORKS
+  -------------------
+  A race recap. Everything here is plain HTML you can edit by
+  hand: the story, the quick facts and the results table are all
+  typed into the page, so they stay fixed as a record of the race.
+
+  Shared files:
+    styles.css  Post page styles are in section 12 "POST PAGES".
+    script.js   Only animates the start lights on this page.
+
+  Nothing on this page has an id that script.js needs, so you
+  can edit anything without breaking the script.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Browser tab text. Format: post title | blog name -->
+  <title>Antonelli Makes It Two as a Scary Crash Sparks a Rules Row | Lights Out</title>
+
+  <!-- Summary for search engines -->
+  <meta name="description" content="Race recap: Japanese Grand Prix 2026. Antonelli wins again at Suzuka, but the big story is Bearman&#x27;s crash and what it says about the new energy rules.">
+
+  <!-- Shared stylesheet and script, same as every page -->
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ======================================================
+       HEADER
+       Same on every page. "Race Recaps" is marked current
+       with aria-current, since every recap belongs there.
+       ====================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Brand links back to the homepage -->
+      <a class="brand" href="index.html">
+        <div class="brand-row">
+          <span class="brand-name">Lights <span>Out</span></span>
+
+          <!-- Start lights, animated by script.js -->
+          <span class="start-lights" aria-hidden="true" title="Replay start">
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+          </span>
+        </div>
+        <span class="tagline">An unofficial fan blog covering the 2026 F1 season</span>
+      </a>
+
+      <!-- Main navigation. Each href is a file in this folder. -->
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="races.html" aria-current="page">Race Recaps</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ======================================================
+       THE POST
+       ====================================================== -->
+  <article class="post">
+
+    <!-- Back to the list of all recaps -->
+    <a class="back-link" href="races.html">← All race recaps</a>
+
+    <!-- ---------- POST HEADER ----------
+         Category, round + date, headline, one-line summary. -->
+    <header class="post-header">
+      <span class="meta">
+        <span class="tag">Race Recap</span> ·
+        Round 3 ·
+        <time datetime="2026-03-29">March 29, 2026</time>
+      </span>
+      <h1>Antonelli Makes It Two as a Scary Crash Sparks a Rules Row</h1>
+      <p class="dek">A safety car timed perfectly for Kimi Antonelli, and an Oliver Bearman crash that got everyone talking about the 2026 energy rules.</p>
+    </header>
+
+
+    <!-- ---------- QUICK FACTS ----------
+         The key numbers at a glance. Each <dt> is a label and
+         the <dd> right after it is its value. -->
+    <dl class="quick-facts">
+      <div>
+        <dt>Winner</dt>
+        <dd>Kimi Antonelli, Mercedes</dd>
+      </div>
+      <div>
+        <dt>Podium</dt>
+        <dd>Antonelli · Piastri · Leclerc</dd>
+      </div>
+      <div>
+        <dt>Pole</dt>
+        <dd>Kimi Antonelli</dd>
+      </div>
+      <div>
+        <dt>Winning margin</dt>
+        <dd>13.722s</dd>
+      </div>
+      <div>
+        <dt>Circuit</dt>
+        <dd>Suzuka</dd>
+      </div>
+      <div>
+        <dt>Did not finish</dt>
+        <dd>Stroll, Bearman</dd>
+      </div>
+    </dl>
+
+
+    <!-- ---------- PHOTO ----------
+         Space for one photo, with a credit caption under it.
+         Right now it shows a placeholder box.
+
+         TO ADD A PHOTO:
+         1. Find one on commons.wikimedia.org with an OK license:
+            CC BY, CC BY-SA, CC0 or Public Domain. Never use photos
+            from Google Images, F1.com, team or news sites.
+         2. Click "Use this file" on its page for the author and
+            license, and download it.
+         3. Save it in an "images" folder next to this file.
+         4. Delete the photo-placeholder <div>, uncomment the <img>,
+            set src and alt, and fill in the caption.
+         The credit caption is what the license requires, so keep it.
+
+         Styled in styles.css, section 12 (.post-photo). -->
+    <figure class="post-photo">
+
+      <!-- Placeholder box. FIXME: replace with a real photo -->
+      <div class="photo-placeholder">Photo goes here</div>
+
+      <!-- The real image. Remove the comment marks to use it.
+      <img src="images/your-photo.jpg"
+           alt="Describe what the photo shows">
+      -->
+
+      <!-- Caption and credit. FIXME: fill in once you've picked a photo -->
+      <figcaption>
+        <span class="photo-caption">[What the photo shows]</span>
+        <span class="photo-credit">
+          Photo: [Photographer's name],
+          <a href="[license link]">[license, e.g. CC BY-SA 4.0]</a>,
+          via <a href="[photo's Commons page]">Wikimedia Commons</a>
+        </span>
+      </figcaption>
+    </figure>
+
+
+    <!-- ---------- THE STORY ----------
+         Each <h2> starts a section, each <p> is a paragraph. -->
+    <div class="post-body">
+
+      <p>Kimi Antonelli is on a roll. He won at Suzuka from pole for two wins in a row, beating Oscar Piastri by nearly 14 seconds. But the race will be remembered for a crash, and the questions it raised.</p>
+
+      <h2>A bad start for Mercedes</h2>
+
+      <p>Piastri and Charles Leclerc got away brilliantly and ran first and second. Both Mercedes bogged down, with Russell dropping to fourth and Antonelli to sixth.</p>
+
+      <p>Russell fought back quickly, passing Lando Norris and then Leclerc in the first three laps, but he couldn&#x27;t touch Piastri. Antonelli worked his way back to fourth by lap 10.</p>
+
+      <h2>The crash that changed everything</h2>
+
+      <p>The pit stops shuffled the order, and when Russell stopped on lap 20, Antonelli took the lead. On that same lap, Oliver Bearman crashed his Haas hard at Spoon.</p>
+
+      <p>He&#x27;d been closing fast on Franco Colapinto&#x27;s Alpine, which was harvesting energy and running much slower at that point. Bearman had to swerve onto the grass to avoid him and lost control.</p>
+
+      <p>The safety car came out, and Antonelli pitted under it without losing the lead. Lewis Hamilton was the big loser, held in the pit lane for Verstappen and dropping behind the Mercedes and Piastri.</p>
+
+      <h2>Run to the flag</h2>
+
+      <p>Antonelli pulled away at the restart. Behind him, Leclerc got past Hamilton on lap 41 and Russell followed a lap later. Leclerc then held Russell off for the last podium spot, Norris passed Hamilton for fifth, and Pierre Gasly kept Verstappen behind for seventh.</p>
+
+      <h2>The fallout</h2>
+
+      <p>Drivers didn&#x27;t hold back afterwards. Huge speed differences between cars harvesting and cars deploying energy are exactly what made Bearman&#x27;s crash so dangerous. The FIA opened a review with the engine manufacturers, and changes to the energy rules followed in time for Miami.</p>
+
+      <!-- YOUR TAKE
+           Space for your own opinion on the race.
+           FIXME: write your take, or delete this box -->
+      <div class="callout">
+        <p><strong>My take:</strong> Add your own thoughts on this race here.</p>
+      </div>
+
+
+      <!-- ---------- RESULTS TABLE ----------
+           From the official classification. class="dnf" dims a
+           row for a driver who didn't finish. -->
+      <h2>Race result</h2>
+
+      <div class="table-wrap">
+        <table class="results">
+          <thead>
+            <tr>
+              <th>Pos</th>
+              <th>Driver</th>
+              <th>Team</th>
+              <th class="num">Gap</th>
+              <th class="num">Pts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Kimi Antonelli</td><td>Mercedes</td><td class="num">1:28:03.403</td><td class="num">25</td></tr>
+            <tr><td>2</td><td>Oscar Piastri</td><td>McLaren</td><td class="num">+13.722s</td><td class="num">18</td></tr>
+            <tr><td>3</td><td>Charles Leclerc</td><td>Ferrari</td><td class="num">+15.270s</td><td class="num">15</td></tr>
+            <tr><td>4</td><td>George Russell</td><td>Mercedes</td><td class="num">+15.754s</td><td class="num">12</td></tr>
+            <tr><td>5</td><td>Lando Norris</td><td>McLaren</td><td class="num">+23.479s</td><td class="num">10</td></tr>
+            <tr><td>6</td><td>Lewis Hamilton</td><td>Ferrari</td><td class="num">+25.037s</td><td class="num">8</td></tr>
+            <tr><td>7</td><td>Pierre Gasly</td><td>Alpine</td><td class="num">+32.340s</td><td class="num">6</td></tr>
+            <tr><td>8</td><td>Max Verstappen</td><td>Red Bull Racing</td><td class="num">+32.677s</td><td class="num">4</td></tr>
+            <tr><td>9</td><td>Liam Lawson</td><td>Racing Bulls</td><td class="num">+50.180s</td><td class="num">2</td></tr>
+            <tr><td>10</td><td>Esteban Ocon</td><td>Haas</td><td class="num">+51.216s</td><td class="num">1</td></tr>
+            <tr><td>11</td><td>Nico Hülkenberg</td><td>Audi</td><td class="num">+52.280s</td><td class="num">0</td></tr>
+            <tr><td>12</td><td>Isack Hadjar</td><td>Red Bull Racing</td><td class="num">+56.154s</td><td class="num">0</td></tr>
+            <tr><td>13</td><td>Gabriel Bortoleto</td><td>Audi</td><td class="num">+59.078s</td><td class="num">0</td></tr>
+            <tr><td>14</td><td>Arvid Lindblad</td><td>Racing Bulls</td><td class="num">+59.848s</td><td class="num">0</td></tr>
+            <tr><td>15</td><td>Carlos Sainz</td><td>Williams</td><td class="num">+1:05.008</td><td class="num">0</td></tr>
+            <tr><td>16</td><td>Franco Colapinto</td><td>Alpine</td><td class="num">+1:05.773</td><td class="num">0</td></tr>
+            <tr><td>17</td><td>Sergio Pérez</td><td>Cadillac</td><td class="num">+1:32.453</td><td class="num">0</td></tr>
+            <tr><td>18</td><td>Fernando Alonso</td><td>Aston Martin</td><td class="num">+1 lap</td><td class="num">0</td></tr>
+            <tr><td>19</td><td>Valtteri Bottas</td><td>Cadillac</td><td class="num">+1 lap</td><td class="num">0</td></tr>
+            <tr><td>20</td><td>Alexander Albon</td><td>Williams</td><td class="num">+2 laps</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>NC</td><td>Lance Stroll</td><td>Aston Martin</td><td class="num">DNF (water pressure)</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>NC</td><td>Oliver Bearman</td><td>Haas</td><td class="num">DNF (accident)</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="source-note">NC = not classified, DNS = did not start. Results from the official F1 classification.</p>
+
+    </div>
+
+
+    <!-- ---------- PREVIOUS / NEXT RACE ----------
+         Links to the recaps either side of this one, so readers
+         can click through the season in order.
+         Styled in styles.css, section 12 (.post-nav). -->
+    <nav class="post-nav" aria-label="More recaps">
+      <a class="post-nav-prev" href="recap-chinese-gp-2026.html"><span>← Previous race</span>China</a>
+      <a class="post-nav-next" href="recap-miami-gp-2026.html"><span>Next race →</span>Miami</a>
+    </nav>
+
+  </article>
+
+
+  <!-- ======================================================
+       FOOTER
+       ====================================================== -->
+  <footer>
+    Unofficial fan site. Not affiliated with Formula 1, Formula One Licensing BV, or the FIA.
+  </footer>
+
+</body>
+</html>

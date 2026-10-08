@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================
+  LIGHTS OUT — News page (news.html)
+  ==========================================================
+
+  WHAT THIS PAGE IS
+  -----------------
+  The list of news posts and opinion pieces: driver moves, team
+  updates, rule changes, your takes. Anything that isn't a race
+  recap goes here.
+
+  This page is plain HTML. You add each post's card by hand.
+
+  ADDING A NEWS POST
+  ------------------
+  1. Make the post itself: copy news-engine-rules-v8.html,
+     rename it (e.g. news-driver-market-2027.html) and swap in
+     your writing. Its top comment walks you through it.
+  2. Here, copy the existing card below, paste it at the TOP
+     of the list, and change the href, date, title and teaser.
+
+  SHARED FILES
+  ------------
+  Like every page on the site, this one loads:
+    styles.css  Colors and layout. Section pages are styled in
+                section 13 "SECTION PAGES".
+    script.js   Always animates the start lights in the header.
+                It only fills in live data on pages that have the
+                matching boxes (it checks for their ids first).
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Browser tab text. Format: page name | blog name -->
+  <title>News | Lights Out</title>
+
+  <!-- Summary for search engines -->
+  <meta name="description" content="News and opinion from around the 2026 F1 season.">
+
+  <!-- Shared stylesheet, same as every page -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Shared script. "defer" waits until the page is built. -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ======================================================
+       HEADER
+       Identical on every page so the site feels consistent.
+       The only thing that changes is which nav link carries
+       aria-current="page". Here it's "News".
+       ====================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Brand links back to the homepage -->
+      <a class="brand" href="index.html">
+        <div class="brand-row">
+          <span class="brand-name">Lights <span>Out</span></span>
+
+          <!-- Start lights, animated by script.js -->
+          <span class="start-lights" aria-hidden="true" title="Replay start">
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+          </span>
+        </div>
+        <span class="tagline">An unofficial fan blog covering the 2026 F1 season</span>
+      </a>
+
+      <!-- Main navigation. Each href is a file in this folder. -->
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="races.html">Race Recaps</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="news.html" aria-current="page">News</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ======================================================
+       PAGE CONTENT
+       .container centers it; .page adds space above and below.
+       ====================================================== -->
+  <main class="container page">
+
+    <!-- Page title and intro -->
+    <header class="page-header">
+      <span class="eyebrow">2026 Season</span>
+      <h1>News</h1>
+      <!-- FIXME: rewrite in your own voice -->
+      <p>Driver moves, team updates, rule changes and hot takes from around the paddock.</p>
+    </header>
+
+    <!-- THE LIST OF NEWS POSTS
+         Each <a class="post-card"> is one post. The whole card is a
+         link to that post's file. Newest goes at the top.
+         To add a post, copy a whole card (from <a> to </a>),
+         paste it above the others, and edit it. -->
+    <div class="post-list">
+
+      <!-- Horner and Ferrari, 8 Oct 2026 -->
+      <a class="post-card" href="news-horner-ferrari.html">
+        <span class="meta"><span class="tag">Rumour Mill</span> · <time datetime="2026-10-08">Oct 8, 2026</time></span>
+        <h3>Christian Horner to Ferrari? Here's What We Actually Know</h3>
+        <p>Horner says Ferrari is the one team he'd join without owning a stake. Fact, rumour, and what happens next.</p>
+      </a>
+
+      <!-- Audi's first season, 8 Oct 2026 -->
+      <a class="post-card" href="news-audi-first-season.html">
+        <span class="meta"><span class="tag">Teams</span> · <time datetime="2026-10-08">Oct 8, 2026</time></span>
+        <h3>Audi's First Season: Slow Start, Big Plans</h3>
+        <p>Audi arrived with its own team and engine. A rough start, signs of life since summer, and a target of 2030.</p>
+      </a>
+
+      <!-- Engine rules hot take, 8 Oct 2026 -->
+      <a class="post-card" href="news-engine-rules-v8.html">
+        <span class="meta"><span class="tag">Hot Take</span> · <time datetime="2026-10-08">Oct 8, 2026</time></span>
+        <h3>The 2026 Engines Aren't Working. Bring Back the V8s.</h3>
+        <p>Most of a season in, the new hybrid rules have mostly given us battery management. The V8 plan can't come soon enough.</p>
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <!-- ======================================================
+       FOOTER
+       Same disclaimer as every page.
+       ====================================================== -->
+  <footer>
+    Unofficial fan site. Not affiliated with Formula 1, Formula One Licensing BV, or the FIA.
+  </footer>
+
+</body>
+</html>

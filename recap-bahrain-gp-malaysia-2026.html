@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================
+  LIGHTS OUT — Race Recap Page
+  Bahrain Grand Prix in Malaysia (Sepang), 4 October 2026
+  ==========================================================
+
+  HOW THIS PAGE WORKS
+  -------------------
+  This is a normal post page. Unlike the homepage, almost
+  everything here is plain HTML that you write and edit by hand.
+  The race results are typed straight into the page, so they
+  never change. That's what you want for a recap: it records
+  what happened in that one race.
+
+  It uses the same two shared files as the homepage:
+    styles.css  Colors and layout. Post page styles are in
+                section 12 "POST PAGES".
+    script.js   Only the start lights animation runs here.
+                The live Next Race and Standings code checks
+                whether this page has those boxes, sees that it
+                doesn't, and skips itself.
+
+  MAKING THE NEXT RECAP
+  ---------------------
+  1. Copy this file and rename it, e.g. recap-mexico-gp-2026.html
+  2. Change the <title> and description in <head>
+  3. Replace the header, quick facts, story and results table
+  4. Add a card for it at the top of races.html
+  5. Make it the featured post on the homepage (index.html)
+
+  Nothing in this page has an id that script.js needs, so you
+  can edit anything without breaking the script.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Browser tab text. Format: post title | blog name -->
+  <title>Verstappen Ends His Drought in the Sepang Rain | Lights Out</title>
+
+  <!-- Summary for search engines -->
+  <meta name="description" content="Race recap: Max Verstappen wins a rain-delayed, safety-car-filled Bahrain Grand Prix in Malaysia, his first victory of 2026.">
+
+  <!-- Same shared stylesheet as every page -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Same shared script. "defer" runs it after the page is built.
+       On this page it only animates the start lights. -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ======================================================
+       HEADER
+       Identical to the homepage header. Every page should
+       have the same one so the site feels consistent.
+       Only difference: "Race Recaps" is marked as the current
+       section with aria-current, so it shows red in the nav.
+       ====================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Brand links back to the homepage -->
+      <a class="brand" href="index.html">
+        <div class="brand-row">
+          <span class="brand-name">Lights <span>Out</span></span>
+
+          <!-- Start lights. script.js finds these by the
+               "start-lights" class and animates them. -->
+          <span class="start-lights" aria-hidden="true" title="Replay start">
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+          </span>
+        </div>
+        <span class="tagline">An unofficial fan blog covering the 2026 F1 season</span>
+      </a>
+
+      <!-- Main navigation. "Race Recaps" is current on this page,
+           since every recap belongs to that section. -->
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="races.html" aria-current="page">Race Recaps</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ======================================================
+       THE POST
+       <article> marks a self-contained piece of writing.
+       ".post" in styles.css narrows it to a readable width.
+       ====================================================== -->
+  <article class="post">
+
+    <!-- Back to the list of all recaps -->
+    <a class="back-link" href="races.html">← All race recaps</a>
+
+    <!-- ---------- POST HEADER ----------
+         Category + date, the headline, and a one-line summary
+         (called a "dek" in journalism). -->
+    <header class="post-header">
+      <!-- <time datetime> gives the date in a format computers
+           can read, while the text inside is for people -->
+      <span class="meta">
+        <span class="tag">Race Recap</span> ·
+        Round 16 ·
+        <time datetime="2026-10-04">October 4, 2026</time>
+      </span>
+      <h1>Verstappen Ends His Drought in the Sepang Rain</h1>
+      <p class="dek">A 100-minute rain delay, a string of safety cars and a Mercedes power failure. Max finally gets his first win of 2026.</p>
+    </header>
+
+
+    <!-- ---------- QUICK FACTS ----------
+         The key numbers at a glance.
+         <dl> is a "description list": each <dt> is a label
+         and the <dd> right after it is its value. -->
+    <dl class="quick-facts">
+      <div>
+        <dt>Winner</dt>
+        <dd>Max Verstappen, Red Bull</dd>
+      </div>
+      <div>
+        <dt>Podium</dt>
+        <dd>Verstappen · Antonelli · Hamilton</dd>
+      </div>
+      <div>
+        <dt>Pole</dt>
+        <dd>Max Verstappen</dd>
+      </div>
+      <div>
+        <dt>Winning margin</dt>
+        <dd>2.307s</dd>
+      </div>
+      <div>
+        <dt>Circuit</dt>
+        <dd>Sepang, Malaysia</dd>
+      </div>
+      <div>
+        <dt>Retirements</dt>
+        <dd>Russell, Albon, Bottas</dd>
+      </div>
+    </dl>
+
+
+    <!-- ---------- POST PHOTO ----------
+         Styled in styles.css, section 12 (.post-photo). -->
+    <figure class="post-photo">
+
+    
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Petronas_Sepang_International_Circuit_Logo_%282023-now%29.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+           alt="Logo of the Sepang International Circuit, which hosted the Bahrain Grand Prix in Malaysia in 2026">
+      
+
+      <figcaption>
+        <span class="photo-caption">Logo of the Sepang International Circuit, which hosted the Bahrain Grand Prix in Malaysia in 2026</span>
+        <span class="photo-credit">
+          Photo: [N/A],
+          <a href="[license link]">[license, e.g. CC BY-SA 4.0]</a>,
+          via <a href="[photo's Commons page]">Wikimedia Commons</a>
+        </span>
+      </figcaption>
+    </figure>
+
+
+    <!-- ---------- THE STORY ----------
+         The written recap. Each <h2> starts a new section.
+         Each <p> is one paragraph. -->
+    <div class="post-body">
+
+      <p>It took most of a season, a relocated Grand Prix and a tropical downpour, but Max Verstappen is a winner again. He took the Bahrain Grand Prix in Malaysia by 2.3 seconds over Kimi Antonelli, with Lewis Hamilton completing the podium after one of the drives of the season.</p>
+
+      <p>It's Verstappen's first win of 2026, Red Bull's first of the year, and the 72nd of his career. His last one came at the end of last season in Abu Dhabi.</p>
+
+      <h2>Wait, Bahrain in Malaysia?</h2>
+
+      <p>Yep. The Bahrain round was originally on the calendar for April, got postponed, and was eventually moved to Sepang because of the conflict in the Middle East. That also meant F1 returned to Sepang for the first time in nine years. The track hadn't lost its famous weather.</p>
+
+      <h2>The start</h2>
+
+      <p>A tropical storm hit before the race and pushed the start back by about 100 minutes. When things finally got going, the field ran behind the safety car before a standing start, and roughly half the grid gambled on intermediates.</p>
+
+      <p>Verstappen started from pole but didn't get away cleanly. Both Mercedes went past him, with Antonelli leading into Turn 1 and George Russell slotting into second. Hamilton had the worst of it. He started second on soft slicks, had no grip at all on the wet track, and dropped down the order.</p>
+
+      <h2>The race turns on lap 9</h2>
+
+      <p>Valtteri Bottas slid off into the gravel on lap 9 and brought out the safety car. With the track drying, almost everyone dived into the pits for slicks. Antonelli went onto mediums and Verstappen onto softs.</p>
+
+      <p>That call won the race. Verstappen used the grippier tyre to get past Antonelli at the restart and never really looked back from there.</p>
+
+      <h2>Hamilton's charge</h2>
+
+      <p>The comeback of the day belonged to Hamilton. After plummeting at the start, he carved back up to fifth by lap 23. Ferrari pitted him for mediums on lap 31, then took advantage of the late neutralisations to bolt on fresh softs. He used them to pass Isack Hadjar in the closing laps and grab third.</p>
+
+      <p>His teammate Charles Leclerc had a quieter recovery story of his own, coming back from early trouble and a collision to finish fourth.</p>
+
+      <h2>Chaos in the closing laps</h2>
+
+      <p>With about ten laps left, Alex Albon went off, triggering a virtual safety car and then a full safety car. That shuffled the pit stops around at the front, and for a moment Antonelli was leading again before Mercedes brought him in.</p>
+
+      <p>Then came the big blow for Mercedes. Russell, running third, suffered a power failure while the safety car was out and parked his car. It's a costly zero in the title fight.</p>
+
+      <p>Verstappen handled the final restart and held off Antonelli to the flag.</p>
+
+      <!-- YOUR TAKE
+           A space for your own opinion. This is what makes a
+           fan blog worth reading over a news site.
+           FIXME: write your own take here -->
+      <div class="callout">
+        <p><strong>My take:</strong> Write your own opinion here. Is this the start of a Red Bull revival, or a one-off in strange conditions? Was Hamilton's drive the best of his Ferrari career so far?</p>
+      </div>
+
+      <h2>What it means for the championship</h2>
+
+      <p>Second place still did plenty for Antonelli. With Russell scoring nothing, the Mercedes rookie stretched his lead over his teammate to 84 points with seven races remaining.</p>
+
+      <p>There's also a question mark over how many of those races will actually run. The season-ending rounds in Qatar and Abu Dhabi are under threat because of the situation in the region, and one of them could be dropped.</p>
+
+
+      <!-- ---------- RESULTS TABLE ----------
+           Typed in by hand from the official results, so it
+           stays fixed as a record of this race.
+           .table-wrap lets the table scroll sideways on small
+           phones instead of squashing.
+           class="num" right-aligns the number columns.
+           class="dnf" on a row dims it (for retirements). -->
+      <h2>Race result</h2>
+
+      <div class="table-wrap">
+        <table class="results">
+          <thead>
+            <tr>
+              <th>Pos</th>
+              <th>Driver</th>
+              <th>Team</th>
+              <th class="num">Gap</th>
+              <th class="num">Pts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Max Verstappen</td><td>Red Bull Racing</td><td class="num">1:47:14.808</td><td class="num">25</td></tr>
+            <tr><td>2</td><td>Kimi Antonelli</td><td>Mercedes</td><td class="num">+2.307s</td><td class="num">18</td></tr>
+            <tr><td>3</td><td>Lewis Hamilton</td><td>Ferrari</td><td class="num">+4.919s</td><td class="num">15</td></tr>
+            <tr><td>4</td><td>Charles Leclerc</td><td>Ferrari</td><td class="num">+7.258s</td><td class="num">12</td></tr>
+            <tr><td>5</td><td>Isack Hadjar</td><td>Red Bull Racing</td><td class="num">+8.571s</td><td class="num">10</td></tr>
+            <tr><td>6</td><td>Oscar Piastri</td><td>McLaren</td><td class="num">+9.454s</td><td class="num">8</td></tr>
+            <tr><td>7</td><td>Liam Lawson</td><td>Racing Bulls</td><td class="num">+12.753s</td><td class="num">6</td></tr>
+            <tr><td>8</td><td>Fernando Alonso</td><td>Aston Martin</td><td class="num">+13.372s</td><td class="num">4</td></tr>
+            <tr><td>9</td><td>Lando Norris</td><td>McLaren</td><td class="num">+13.993s</td><td class="num">2</td></tr>
+            <tr><td>10</td><td>Arvid Lindblad</td><td>Racing Bulls</td><td class="num">+15.928s</td><td class="num">1</td></tr>
+            <tr><td>11</td><td>Nico Hulkenberg</td><td>Audi</td><td class="num">+17.404s</td><td class="num">0</td></tr>
+            <tr><td>12</td><td>Lance Stroll</td><td>Aston Martin</td><td class="num">+18.052s</td><td class="num">0</td></tr>
+            <tr><td>13</td><td>Franco Colapinto</td><td>Alpine</td><td class="num">+18.997s</td><td class="num">0</td></tr>
+            <tr><td>14</td><td>Oliver Bearman</td><td>Haas</td><td class="num">+22.305s</td><td class="num">0</td></tr>
+            <tr><td>15</td><td>Esteban Ocon</td><td>Haas</td><td class="num">+22.532s</td><td class="num">0</td></tr>
+            <tr><td>16</td><td>Pierre Gasly</td><td>Alpine</td><td class="num">+23.315s</td><td class="num">0</td></tr>
+            <tr><td>17</td><td>Carlos Sainz</td><td>Williams</td><td class="num">+25.431s</td><td class="num">0</td></tr>
+            <tr><td>18</td><td>Gabriel Bortoleto</td><td>Audi</td><td class="num">+28.233s</td><td class="num">0</td></tr>
+            <tr><td>19</td><td>Sergio Perez</td><td>Cadillac</td><td class="num">+29.310s</td><td class="num">0</td></tr>
+            <!-- Retirements: dimmed with class="dnf" -->
+            <tr class="dnf"><td>20</td><td>George Russell</td><td>Mercedes</td><td class="num">DNF</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>NC</td><td>Alexander Albon</td><td>Williams</td><td class="num">DNF</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>NC</td><td>Valtteri Bottas</td><td>Cadillac</td><td class="num">DNF</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Where the results came from. NC = not classified. -->
+      <p class="source-note">NC = not classified. Results from the official F1 classification.</p>
+
+    </div>
+
+
+    <!-- ---------- PREVIOUS / NEXT RACE ----------
+         Links to the recaps either side of this one.
+         FIXME: when you publish the next recap, replace the empty
+         <span></span> with a "Next race" link like the one on
+         the other recaps. -->
+    <nav class="post-nav" aria-label="More recaps">
+      <a class="post-nav-prev" href="recap-azerbaijan-gp-2026.html"><span>← Previous race</span>Azerbaijan</a>
+      <span></span>
+    </nav>
+
+  </article>
+
+
+  <!-- ======================================================
+       FOOTER
+       Same disclaimer as every page.
+       ====================================================== -->
+  <footer>
+    Unofficial fan site. Not affiliated with Formula 1, Formula One Licensing BV, or the FIA.
+  </footer>
+
+</body>
+</html>

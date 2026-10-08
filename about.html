@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================
+  LIGHTS OUT — About page (about.html)
+  ==========================================================
+
+  WHAT THIS PAGE IS
+  -----------------
+  Tells readers who's behind the blog and what it's about.
+  Plain HTML, nothing automatic. Everything marked FIXME is
+  placeholder text for you to replace with your own words.
+
+  SHARED FILES
+  ------------
+  Like every page on the site, this one loads:
+    styles.css  Colors and layout. Section pages are styled in
+                section 13 "SECTION PAGES".
+    script.js   Always animates the start lights in the header.
+                It only fills in live data on pages that have the
+                matching boxes (it checks for their ids first).
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Browser tab text. Format: page name | blog name -->
+  <title>About | Lights Out</title>
+
+  <!-- Summary for search engines -->
+  <meta name="description" content="About Lights Out, an unofficial fan blog covering the 2026 F1 season.">
+
+  <!-- Shared stylesheet, same as every page -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Shared script. "defer" waits until the page is built. -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ======================================================
+       HEADER
+       Identical on every page so the site feels consistent.
+       The only thing that changes is which nav link carries
+       aria-current="page". Here it's "About".
+       ====================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Brand links back to the homepage -->
+      <a class="brand" href="index.html">
+        <div class="brand-row">
+          <span class="brand-name">Lights <span>Out</span></span>
+
+          <!-- Start lights, animated by script.js -->
+          <span class="start-lights" aria-hidden="true" title="Replay start">
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+          </span>
+        </div>
+        <span class="tagline">An unofficial fan blog covering the 2026 F1 season</span>
+      </a>
+
+      <!-- Main navigation. Each href is a file in this folder. -->
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="races.html">Race Recaps</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ======================================================
+       PAGE CONTENT
+       .container centers it; .page adds space above and below.
+       ====================================================== -->
+  <main class="container page">
+
+    <!-- Page title -->
+    <header class="page-header">
+      <span class="eyebrow">About</span>
+      <h1>About Lights Out</h1>
+      <!-- FIXME: one-line summary of the blog -->
+      <p>An independent fan blog following every lap of the 2026 F1 season.</p>
+    </header>
+
+    <!-- Main text. .about-body keeps lines a readable length
+         (styles.css, section 13). -->
+    <div class="about-body">
+
+      <!-- FIXME: who you are and why you started the blog -->
+      <h2>Who's behind it</h2>
+      <p>Write a few sentences about yourself here: how you got into F1, who you root for, and why you started writing about it.</p>
+
+      <!-- FIXME: what readers can expect -->
+      <h2>What you'll find here</h2>
+      <p>A recap after every Grand Prix, up-to-date standings, and news and opinion from around the paddock. Change this to match what you actually plan to post.</p>
+
+      <!-- FIXME: how to reach you (email, social links), or delete -->
+      <h2>Get in touch</h2>
+      <p>Add an email address or social media links here.</p>
+
+      <!-- Why the site says it's unofficial. Keep this section:
+           it makes clear you aren't claiming to be F1 itself. -->
+      <h2>The fine print</h2>
+      <p>Lights Out is an unofficial fan site. It isn't affiliated with, endorsed by, or connected to Formula 1, Formula One Licensing BV, the FIA, or any team. Race data in the standings and next race boxes comes from the free <a href="https://github.com/jolpica/jolpica-f1">Jolpica F1</a> API.</p>
+
+    </div>
+
+  </main>
+
+
+  <!-- ======================================================
+       FOOTER
+       Same disclaimer as every page.
+       ====================================================== -->
+  <footer>
+    Unofficial fan site. Not affiliated with Formula 1, Formula One Licensing BV, or the FIA.
+  </footer>
+
+</body>
+</html>

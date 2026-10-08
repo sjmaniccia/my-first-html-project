@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================
+  LIGHTS OUT — Race Recap, Round 9
+  British Grand Prix, July 5, 2026
+  ==========================================================
+
+  HOW THIS PAGE WORKS
+  -------------------
+  A race recap. Everything here is plain HTML you can edit by
+  hand: the story, the quick facts and the results table are all
+  typed into the page, so they stay fixed as a record of the race.
+
+  Shared files:
+    styles.css  Post page styles are in section 12 "POST PAGES".
+    script.js   Only animates the start lights on this page.
+
+  Nothing on this page has an id that script.js needs, so you
+  can edit anything without breaking the script.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Browser tab text. Format: post title | blog name -->
+  <title>Leclerc Wins Behind the Safety Car at Silverstone | Lights Out</title>
+
+  <!-- Summary for search engines -->
+  <meta name="description" content="Race recap: British Grand Prix 2026. A Ferrari one-two start, an umbrella on track, and a finish behind the safety car. Leclerc takes his first win of 2026.">
+
+  <!-- Shared stylesheet and script, same as every page -->
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ======================================================
+       HEADER
+       Same on every page. "Race Recaps" is marked current
+       with aria-current, since every recap belongs there.
+       ====================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Brand links back to the homepage -->
+      <a class="brand" href="index.html">
+        <div class="brand-row">
+          <span class="brand-name">Lights <span>Out</span></span>
+
+          <!-- Start lights, animated by script.js -->
+          <span class="start-lights" aria-hidden="true" title="Replay start">
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+          </span>
+        </div>
+        <span class="tagline">An unofficial fan blog covering the 2026 F1 season</span>
+      </a>
+
+      <!-- Main navigation. Each href is a file in this folder. -->
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="races.html" aria-current="page">Race Recaps</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ======================================================
+       THE POST
+       ====================================================== -->
+  <article class="post">
+
+    <!-- Back to the list of all recaps -->
+    <a class="back-link" href="races.html">← All race recaps</a>
+
+    <!-- ---------- POST HEADER ----------
+         Category, round + date, headline, one-line summary. -->
+    <header class="post-header">
+      <span class="meta">
+        <span class="tag">Race Recap</span> ·
+        Round 9 ·
+        <time datetime="2026-07-05">July 5, 2026</time>
+      </span>
+      <h1>Leclerc Wins Behind the Safety Car at Silverstone</h1>
+      <p class="dek">Ferrari dominated the start, Antonelli&#x27;s race fell apart, and a software glitch meant the race finished under the safety car.</p>
+    </header>
+
+
+    <!-- ---------- QUICK FACTS ----------
+         The key numbers at a glance. Each <dt> is a label and
+         the <dd> right after it is its value. -->
+    <dl class="quick-facts">
+      <div>
+        <dt>Winner</dt>
+        <dd>Charles Leclerc, Ferrari</dd>
+      </div>
+      <div>
+        <dt>Podium</dt>
+        <dd>Leclerc · Russell · Hamilton</dd>
+      </div>
+      <div>
+        <dt>Pole</dt>
+        <dd>Kimi Antonelli</dd>
+      </div>
+      <div>
+        <dt>Winning margin</dt>
+        <dd>0.427s</dd>
+      </div>
+      <div>
+        <dt>Circuit</dt>
+        <dd>Silverstone</dd>
+      </div>
+      <div>
+        <dt>Did not finish</dt>
+        <dd>Verstappen, Albon, Hülkenberg</dd>
+      </div>
+    </dl>
+
+
+    <!-- ---------- PHOTO ----------
+         Space for one photo, with a credit caption under it.
+         Right now it shows a placeholder box.
+
+         TO ADD A PHOTO:
+         1. Find one on commons.wikimedia.org with an OK license:
+            CC BY, CC BY-SA, CC0 or Public Domain. Never use photos
+            from Google Images, F1.com, team or news sites.
+         2. Click "Use this file" on its page for the author and
+            license, and download it.
+         3. Save it in an "images" folder next to this file.
+         4. Delete the photo-placeholder <div>, uncomment the <img>,
+            set src and alt, and fill in the caption.
+         The credit caption is what the license requires, so keep it.
+
+         Styled in styles.css, section 12 (.post-photo). -->
+    <figure class="post-photo">
+
+      <!-- Placeholder box. FIXME: replace with a real photo -->
+      <div class="photo-placeholder">Photo goes here</div>
+
+      <!-- The real image. Remove the comment marks to use it.
+      <img src="images/your-photo.jpg"
+           alt="Describe what the photo shows">
+      -->
+
+      <!-- Caption and credit. FIXME: fill in once you've picked a photo -->
+      <figcaption>
+        <span class="photo-caption">[What the photo shows]</span>
+        <span class="photo-credit">
+          Photo: [Photographer's name],
+          <a href="[license link]">[license, e.g. CC BY-SA 4.0]</a>,
+          via <a href="[photo's Commons page]">Wikimedia Commons</a>
+        </span>
+      </figcaption>
+    </figure>
+
+
+    <!-- ---------- THE STORY ----------
+         Each <h2> starts a section, each <p> is a paragraph. -->
+    <div class="post-body">
+
+      <p>Charles Leclerc won the British Grand Prix, Ferrari&#x27;s second win of the season. But it ended in an odd way: the field crossed the line behind the safety car after a planned final-lap restart was cancelled.</p>
+
+      <h2>Ferrari jump the Mercedes</h2>
+
+      <p>Leclerc made the best start of anyone and took the lead from polesitter Kimi Antonelli. Lewis Hamilton passed Antonelli too, putting Ferrari first and second. Hamilton was hit with a five-second penalty for a possible false start, though.</p>
+
+      <p>Further back, Oscar Piastri broke his front wing after contact with Liam Lawson at Brooklands, and Alex Albon earned a ten-second penalty for hitting Oliver Bearman.</p>
+
+      <h2>An umbrella on track</h2>
+
+      <p>Antonelli passed Hamilton for second on lap 11 and started chasing Leclerc. A brief virtual safety car came out on lap 22, to clear an umbrella from the track. Only at Silverstone.</p>
+
+      <p>Hamilton and George Russell fought over third for most of the middle of the race, until Russell had to pit on lap 35 with a slow puncture. Hamilton then passed Verstappen on lap 38 for third.</p>
+
+      <h2>Antonelli&#x27;s race unravels</h2>
+
+      <p>Antonelli was closing on Leclerc on hard tyres when he reported a problem on lap 41. It turned out to be a broken wheel shield, damaged on an aggressive kerb at Copse. An extra stop and a five-second track limits penalty dropped him to 15th and out of the points.</p>
+
+      <h2>The strange finish</h2>
+
+      <p>On lap 48, Max Verstappen spun at Stowe and retired, bringing out the safety car. Leclerc and Hamilton pitted for fresh softs, while Russell stayed out and moved into second. A restart was planned for the final lap, but race control cancelled it because of a software error, so the race finished under the safety car with the whole top ten within about three and a half seconds.</p>
+
+      <!-- YOUR TAKE
+           Space for your own opinion on the race.
+           FIXME: write your take, or delete this box -->
+      <div class="callout">
+        <p><strong>My take:</strong> Add your own thoughts on this race here.</p>
+      </div>
+
+
+      <!-- ---------- RESULTS TABLE ----------
+           From the official classification. class="dnf" dims a
+           row for a driver who didn't finish. -->
+      <h2>Race result</h2>
+
+      <div class="table-wrap">
+        <table class="results">
+          <thead>
+            <tr>
+              <th>Pos</th>
+              <th>Driver</th>
+              <th>Team</th>
+              <th class="num">Gap</th>
+              <th class="num">Pts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Charles Leclerc</td><td>Ferrari</td><td class="num">1:27:11.335</td><td class="num">25</td></tr>
+            <tr><td>2</td><td>George Russell</td><td>Mercedes</td><td class="num">+0.427s</td><td class="num">18</td></tr>
+            <tr><td>3</td><td>Lewis Hamilton</td><td>Ferrari</td><td class="num">+0.772s</td><td class="num">15</td></tr>
+            <tr><td>4</td><td>Lando Norris</td><td>McLaren</td><td class="num">+1.149s</td><td class="num">12</td></tr>
+            <tr><td>5</td><td>Isack Hadjar</td><td>Red Bull Racing</td><td class="num">+1.598s</td><td class="num">10</td></tr>
+            <tr><td>6</td><td>Liam Lawson</td><td>Racing Bulls</td><td class="num">+2.023s</td><td class="num">8</td></tr>
+            <tr><td>7</td><td>Arvid Lindblad</td><td>Racing Bulls</td><td class="num">+2.214s</td><td class="num">6</td></tr>
+            <tr><td>8</td><td>Gabriel Bortoleto</td><td>Audi</td><td class="num">+2.413s</td><td class="num">4</td></tr>
+            <tr><td>9</td><td>Franco Colapinto</td><td>Alpine</td><td class="num">+3.229s</td><td class="num">2</td></tr>
+            <tr><td>10</td><td>Pierre Gasly</td><td>Alpine</td><td class="num">+3.445s</td><td class="num">1</td></tr>
+            <tr><td>11</td><td>Oscar Piastri</td><td>McLaren</td><td class="num">+4.014s</td><td class="num">0</td></tr>
+            <tr><td>12</td><td>Oliver Bearman</td><td>Haas</td><td class="num">+5.245s</td><td class="num">0</td></tr>
+            <tr><td>13</td><td>Esteban Ocon</td><td>Haas</td><td class="num">+5.512s</td><td class="num">0</td></tr>
+            <tr><td>14</td><td>Sergio Pérez</td><td>Cadillac</td><td class="num">+7.403s</td><td class="num">0</td></tr>
+            <tr><td>15</td><td>Kimi Antonelli</td><td>Mercedes</td><td class="num">+8.005s</td><td class="num">0</td></tr>
+            <tr><td>16</td><td>Valtteri Bottas</td><td>Cadillac</td><td class="num">+8.162s</td><td class="num">0</td></tr>
+            <tr><td>17</td><td>Carlos Sainz</td><td>Williams</td><td class="num">+1 lap</td><td class="num">0</td></tr>
+            <tr><td>18</td><td>Fernando Alonso</td><td>Aston Martin</td><td class="num">+1 lap</td><td class="num">0</td></tr>
+            <tr><td>19</td><td>Lance Stroll</td><td>Aston Martin</td><td class="num">+1 lap</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>20</td><td>Max Verstappen</td><td>Red Bull Racing</td><td class="num">DNF (spun off)</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>NC</td><td>Alexander Albon</td><td>Williams</td><td class="num">DNF (collision damage)</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>NC</td><td>Nico Hülkenberg</td><td>Audi</td><td class="num">DNF (gearbox)</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="source-note">NC = not classified, DNS = did not start. Results from the official F1 classification.</p>
+
+    </div>
+
+
+    <!-- ---------- PREVIOUS / NEXT RACE ----------
+         Links to the recaps either side of this one, so readers
+         can click through the season in order.
+         Styled in styles.css, section 12 (.post-nav). -->
+    <nav class="post-nav" aria-label="More recaps">
+      <a class="post-nav-prev" href="recap-austrian-gp-2026.html"><span>← Previous race</span>Austria</a>
+      <a class="post-nav-next" href="recap-belgian-gp-2026.html"><span>Next race →</span>Belgium</a>
+    </nav>
+
+  </article>
+
+
+  <!-- ======================================================
+       FOOTER
+       ====================================================== -->
+  <footer>
+    Unofficial fan site. Not affiliated with Formula 1, Formula One Licensing BV, or the FIA.
+  </footer>
+
+</body>
+</html>

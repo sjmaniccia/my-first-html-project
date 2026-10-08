@@ -1,0 +1,952 @@
+/* ==========================================================
+   LIGHTS OUT — Main Stylesheet
+   ----------------------------------------------------------
+   Contents
+     1. Color tokens
+     2. Base / reset
+     3. Layout helpers
+     4. Header (brand, start lights, nav)
+     5. Hero
+     6. Buttons
+     7. Main layout + section titles
+     8. Post cards
+     9. Sidebar: next race + countdown
+    10. Sidebar: standings table
+    11. Footer
+    12. Post pages (race recaps and articles)
+    13. Section pages (Race Recaps, Standings, News, About)
+   ========================================================== */
+
+
+/* ----------------------------------------------------------
+   1. COLOR TOKENS
+   Change a color here and it updates everywhere on the site.
+   ---------------------------------------------------------- */
+:root {
+  --bg:        #111216;  /* page background */
+  --surface:   #1a1b21;  /* cards and sidebar boxes */
+  --surface-2: #23242b;  /* boxes inside boxes (countdown tiles) */
+  --border:    #2e3038;  /* thin dividers and outlines */
+  --text:      #f2f2f2;  /* main text */
+  --muted:     #9a9ca5;  /* secondary text: dates, labels */
+  --accent:    #e63939;  /* start-light red, used for highlights */
+  --light-off: #2a2b30;  /* start light when it's dark */
+}
+
+
+/* ----------------------------------------------------------
+   2. BASE / RESET
+   ---------------------------------------------------------- */
+
+/* Padding and borders count inside an element's width */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+/* Links take the color of whatever they sit in */
+a {
+  color: inherit;
+}
+
+
+/* ----------------------------------------------------------
+   3. LAYOUT HELPERS
+   ---------------------------------------------------------- */
+
+/* Centers content and caps its width on big screens */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+
+/* ----------------------------------------------------------
+   4. HEADER
+   ---------------------------------------------------------- */
+
+.site-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 3px solid var(--accent);
+}
+
+/* Brand on the left, nav on the right; wraps on small screens */
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* --- Brand (name + lights + tagline) --- */
+
+.brand {
+  text-decoration: none;
+  color: var(--text);
+}
+
+/* Puts the name and the start lights on one line */
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-name {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* The accent word ("Out") */
+.brand-name span {
+  color: var(--accent);
+}
+
+.tagline {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* --- Start lights --- */
+
+/* The black bar the five lights sit on */
+.start-lights {
+  display: flex;
+  gap: 5px;
+  padding: 4px 6px;
+  background: #000;
+  border-radius: 4px;
+  cursor: pointer; /* hints that clicking replays the sequence */
+}
+
+/* One light, switched off */
+.light {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--light-off);
+  transition: background 0.08s, box-shadow 0.08s;
+}
+
+/* One light, switched on (script.js adds/removes .on) */
+.light.on {
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+/* --- Navigation --- */
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Hover, keyboard focus, and the page you're currently on */
+nav a:hover,
+nav a:focus,
+nav a[aria-current="page"] {
+  color: var(--accent);
+}
+
+
+/* ----------------------------------------------------------
+   5. HERO
+   The big intro block at the top of the homepage.
+   ---------------------------------------------------------- */
+
+.hero {
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Small red label above the headline ("2026 Season") */
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* clamp() scales the headline with screen width, within limits */
+.hero h1 {
+  margin: 0 0 1rem;
+  max-width: 18ch;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hero p {
+  margin: 0 0 1.75rem;
+  max-width: 55ch; /* keeps lines a comfortable reading length */
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+
+/* ----------------------------------------------------------
+   6. BUTTONS
+   ---------------------------------------------------------- */
+
+/* Solid red button */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.3rem;
+  border-radius: 4px;
+  font-weight: 700;
+  text-decoration: none;
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn:hover,
+.btn:focus {
+  filter: brightness(1.1);
+}
+
+/* Outlined button, used next to a solid one */
+.btn-ghost {
+  margin-left: 0.5rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+
+/* ----------------------------------------------------------
+   7. MAIN LAYOUT + SECTION TITLES
+   ---------------------------------------------------------- */
+
+main {
+  padding: 3rem 0;
+}
+
+/* Two columns: posts (2/3) and sidebar (1/3) */
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+}
+
+/* On tablets and phones, stack the sidebar under the posts */
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Heading row with a "view all" link on the right */
+.section-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.section-title h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.section-title a {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.section-title a:hover {
+  color: var(--accent);
+}
+
+
+/* ----------------------------------------------------------
+   8. POST CARDS
+   ---------------------------------------------------------- */
+
+/* --- Featured post (big card with red left edge) --- */
+
+.featured {
+  display: block;
+  margin-bottom: 1.5rem;
+  padding: 1.75rem;
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+}
+
+.featured h3 {
+  margin: 0.25rem 0 0.75rem;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.featured p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* --- Category + date line on every card --- */
+
+.meta {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* The category word ("Race Recap") */
+.meta .tag {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* --- Grid of smaller cards --- */
+
+/* Fits as many 220px+ columns as the space allows */
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.post-card {
+  display: block;
+  padding: 1.25rem;
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.post-card h3 {
+  margin: 0.4rem 0 0.5rem;
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.post-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Both card types lift slightly and turn red on hover/focus */
+.featured:hover,
+.featured:focus,
+.post-card:hover,
+.post-card:focus {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+
+/* ----------------------------------------------------------
+   9. SIDEBAR: NEXT RACE + COUNTDOWN
+   ---------------------------------------------------------- */
+
+/* Shared look for every sidebar box */
+.sidebar-box {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.sidebar-box h2 {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* "Round 19" label; hidden until the script fills it in */
+.race-round {
+  margin: 0 0 0.15rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.race-round:empty {
+  display: none;
+}
+
+.next-race-name {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* Circuit name and city/country, each on its own line */
+.next-race-location {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+}
+
+.next-race-location span {
+  display: block;
+}
+
+/* City, country line */
+#next-race-location {
+  color: var(--muted);
+}
+
+/* Small red marker before the city */
+#next-race-location::before {
+  content: "\25C9\00a0"; /* ◉ followed by a non-breaking space */
+  font-size: 0.7rem;
+  color: var(--accent);
+}
+
+.next-race-date {
+  margin: 0.5rem 0 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* --- Countdown: four tiles in a row --- */
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.countdown div {
+  padding: 0.5rem 0;
+  background: var(--surface-2);
+  border-radius: 4px;
+}
+
+/* The number. tabular-nums stops digits from jiggling as they change */
+.countdown strong {
+  display: block;
+  font-size: 1.4rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The unit label ("Days", "Hrs"...) */
+.countdown span {
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+
+/* ----------------------------------------------------------
+   10. SIDEBAR: STANDINGS TABLE
+   ---------------------------------------------------------- */
+
+.standings {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.standings th {
+  padding: 0 0 0.5rem;
+  text-align: left;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Points header lines up with the points column */
+.standings th:last-child {
+  text-align: right;
+}
+
+.standings td {
+  padding: 0.55rem 0;
+  border-top: 1px solid var(--border);
+}
+
+/* Position number column */
+.standings .pos {
+  width: 2rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+/* Championship leader gets a red position number */
+.standings tr:first-child .pos {
+  color: var(--accent);
+}
+
+/* Team name under each driver */
+.standings .team {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* Points column */
+.standings .pts {
+  text-align: right;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- A whole sidebar box that works as one link ---
+   Used on the homepage standings box. The heading's link gets
+   an invisible layer (::after) stretched over the entire box,
+   so clicking anywhere in the box follows that link. */
+.box-link {
+  position: relative;  /* the stretched layer fills THIS box */
+  transition: border-color 0.15s;
+}
+
+.box-link:hover,
+.box-link:focus-within {
+  border-color: var(--accent);
+}
+
+/* The heading link looks like a normal heading... */
+.box-link-target {
+  text-decoration: none;
+}
+
+/* ...except the arrow turns red on hover */
+.box-link:hover .box-link-target span {
+  color: var(--accent);
+}
+
+/* The invisible clickable layer over the whole box */
+.box-link-target::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+}
+
+/* Keep the data credit link clickable on top of that layer */
+.box-link .standings-note a {
+  position: relative;
+  z-index: 1;
+}
+
+/* "After round X · Data: Jolpica F1" line */
+.standings-note {
+  margin: 0.75rem 0 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.standings-note a {
+  color: var(--muted);
+}
+
+.standings-note a:hover {
+  color: var(--accent);
+}
+
+
+/* ----------------------------------------------------------
+   11. FOOTER
+   ---------------------------------------------------------- */
+
+footer {
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+
+/* ----------------------------------------------------------
+   12. POST PAGES (race recaps and articles)
+   Used by every individual post, e.g. the recap pages.
+   ---------------------------------------------------------- */
+
+/* Narrower column so long text is comfortable to read */
+.post {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* "← Back to home" link above the post */
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+/* --- Post header: tag + date, title, subtitle --- */
+
+.post-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-header h1 {
+  margin: 0.5rem 0 0.75rem;
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+/* One-line summary under the title */
+.dek {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+/* --- Quick facts box: winner, podium, pole, etc. --- */
+
+.quick-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 0 0 2.5rem;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+}
+
+/* <dl> = description list. <dt> is the label, <dd> the value. */
+.quick-facts dt {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.quick-facts dd {
+  margin: 0.2rem 0 0;
+  font-weight: 600;
+}
+
+/* --- Post photo with credit caption --- */
+
+.post-photo {
+  margin: 0 0 2.5rem;
+}
+
+/* The photo fills the column width and keeps its proportions */
+.post-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Empty box shown until a real photo is added.
+   aspect-ratio keeps it a typical photo shape (3:2). */
+.photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 3 / 2;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+}
+
+/* Caption under the photo */
+.post-photo figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* What the photo shows, on its own line */
+.photo-caption {
+  display: block;
+  color: var(--text);
+}
+
+/* The credit line: smaller, links underlined */
+.photo-credit {
+  display: block;
+  font-size: 0.75rem;
+}
+
+.photo-credit a:hover {
+  color: var(--accent);
+}
+
+/* --- Article body text --- */
+
+.post-body {
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.post-body h2 {
+  margin: 2.5rem 0 0.75rem;
+  font-size: 1.35rem;
+}
+
+.post-body p {
+  margin: 0 0 1.25rem;
+}
+
+/* Highlighted opinion box, for your own take */
+.callout {
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface-2);
+  border-radius: 6px;
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Previous / next post links at the bottom of a recap --- */
+
+.post-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.post-nav a {
+  display: block;
+  padding: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.post-nav a:hover,
+.post-nav a:focus {
+  border-color: var(--accent);
+}
+
+/* Small "Previous race" / "Next race" label above the name */
+.post-nav a span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* The "next" link sits on the right, text aligned right */
+.post-nav-next {
+  grid-column: 2;
+  text-align: right;
+}
+
+/* --- Full results table --- */
+
+/* Lets the table scroll sideways on narrow phones */
+.table-wrap {
+  overflow-x: auto;
+  margin: 0 0 1rem;
+}
+
+.results {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.results th {
+  padding: 0 0.75rem 0.6rem 0;
+  text-align: left;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 2px solid var(--border);
+}
+
+.results td {
+  padding: 0.55rem 0.75rem 0.55rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Position column */
+.results td:first-child {
+  width: 2.5rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+/* Top three positions get the red accent */
+.results tbody tr:nth-child(-n+3) td:first-child {
+  color: var(--accent);
+}
+
+/* Gap and points columns line up on the right */
+.results .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Retirements are dimmed */
+.results tr.dnf td {
+  color: var(--muted);
+}
+
+.source-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+
+/* ----------------------------------------------------------
+   13. SECTION PAGES (Race Recaps, Standings, News, About)
+   The pages you reach from the nav menu.
+   ---------------------------------------------------------- */
+
+/* Space around each section page's content */
+.page {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Big title + short intro at the top of each section page */
+.page-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-header h1 {
+  margin: 0.5rem 0 0.5rem;
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.page-header p {
+  margin: 0;
+  max-width: 60ch;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+/* --- Post list (Race Recaps and News pages) --- */
+
+/* One post per row, stacked */
+.post-list {
+  display: grid;
+  gap: 1rem;
+  max-width: 800px;
+}
+
+/* Shown on a section page that has no posts yet */
+.empty-state {
+  padding: 2rem;
+  text-align: center;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+}
+
+/* --- Standings page: two tables side by side --- */
+
+.standings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Stack the two tables on tablets and phones */
+@media (max-width: 800px) {
+  .standings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Wins column header lines up with its numbers */
+.standings th.num {
+  text-align: right;
+}
+
+/* --- About page text --- */
+
+.about-body {
+  max-width: 680px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.about-body h2 {
+  margin: 2rem 0 0.75rem;
+  font-size: 1.3rem;
+}
+
+.about-body p {
+  margin: 0 0 1.25rem;
+}
+
+/* --- Team color bars (standings page) --- */
+
+/* Holder that sits inside a table cell: color bar on the left,
+   name (and the team line under a driver) on the right */
+.name-wrap {
+  display: flex;
+  align-items: stretch;
+  gap: 0.6rem;
+}
+
+/* The bar itself. script.js sets --team-color for each row;
+   gray is the fallback for a team it doesn't recognize. */
+.team-swatch {
+  flex: 0 0 4px;
+  min-height: 1.2em;
+  border-radius: 2px;
+  background: var(--team-color, var(--muted));
+}

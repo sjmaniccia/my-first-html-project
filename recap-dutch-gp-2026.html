@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================
+  LIGHTS OUT — Race Recap, Round 12
+  Dutch Grand Prix, August 23, 2026
+  ==========================================================
+
+  HOW THIS PAGE WORKS
+  -------------------
+  A race recap. Everything here is plain HTML you can edit by
+  hand: the story, the quick facts and the results table are all
+  typed into the page, so they stay fixed as a record of the race.
+
+  Shared files:
+    styles.css  Post page styles are in section 12 "POST PAGES".
+    script.js   Only animates the start lights on this page.
+
+  Nothing on this page has an id that script.js needs, so you
+  can edit anything without breaking the script.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Browser tab text. Format: post title | blog name -->
+  <title>Norris Makes It Two in a Row at a Wet Zandvoort | Lights Out</title>
+
+  <!-- Summary for search engines -->
+  <meta name="description" content="Race recap: Dutch Grand Prix 2026. Verstappen crashes out of his home race on lap 1, and Norris charges through on fresh tyres to win again.">
+
+  <!-- Shared stylesheet and script, same as every page -->
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ======================================================
+       HEADER
+       Same on every page. "Race Recaps" is marked current
+       with aria-current, since every recap belongs there.
+       ====================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Brand links back to the homepage -->
+      <a class="brand" href="index.html">
+        <div class="brand-row">
+          <span class="brand-name">Lights <span>Out</span></span>
+
+          <!-- Start lights, animated by script.js -->
+          <span class="start-lights" aria-hidden="true" title="Replay start">
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+          </span>
+        </div>
+        <span class="tagline">An unofficial fan blog covering the 2026 F1 season</span>
+      </a>
+
+      <!-- Main navigation. Each href is a file in this folder. -->
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="races.html" aria-current="page">Race Recaps</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ======================================================
+       THE POST
+       ====================================================== -->
+  <article class="post">
+
+    <!-- Back to the list of all recaps -->
+    <a class="back-link" href="races.html">← All race recaps</a>
+
+    <!-- ---------- POST HEADER ----------
+         Category, round + date, headline, one-line summary. -->
+    <header class="post-header">
+      <span class="meta">
+        <span class="tag">Race Recap</span> ·
+        Round 12 ·
+        <time datetime="2026-08-23">August 23, 2026</time>
+      </span>
+      <h1>Norris Makes It Two in a Row at a Wet Zandvoort</h1>
+      <p class="dek">Max Verstappen crashed out on lap 1 at his home race, and Lando Norris used fresher tyres to storm past Antonelli and Hamilton.</p>
+    </header>
+
+
+    <!-- ---------- QUICK FACTS ----------
+         The key numbers at a glance. Each <dt> is a label and
+         the <dd> right after it is its value. -->
+    <dl class="quick-facts">
+      <div>
+        <dt>Winner</dt>
+        <dd>Lando Norris, McLaren</dd>
+      </div>
+      <div>
+        <dt>Podium</dt>
+        <dd>Norris · Antonelli · Russell</dd>
+      </div>
+      <div>
+        <dt>Pole</dt>
+        <dd>Lando Norris</dd>
+      </div>
+      <div>
+        <dt>Winning margin</dt>
+        <dd>11.536s</dd>
+      </div>
+      <div>
+        <dt>Circuit</dt>
+        <dd>Zandvoort</dd>
+      </div>
+      <div>
+        <dt>Did not finish</dt>
+        <dd>Albon, Bottas, Ocon, Stroll, Bearman, Verstappen</dd>
+      </div>
+    </dl>
+
+
+    <!-- ---------- PHOTO ----------
+         Space for one photo, with a credit caption under it.
+         Right now it shows a placeholder box.
+
+         TO ADD A PHOTO:
+         1. Find one on commons.wikimedia.org with an OK license:
+            CC BY, CC BY-SA, CC0 or Public Domain. Never use photos
+            from Google Images, F1.com, team or news sites.
+         2. Click "Use this file" on its page for the author and
+            license, and download it.
+         3. Save it in an "images" folder next to this file.
+         4. Delete the photo-placeholder <div>, uncomment the <img>,
+            set src and alt, and fill in the caption.
+         The credit caption is what the license requires, so keep it.
+
+         Styled in styles.css, section 12 (.post-photo). -->
+    <figure class="post-photo">
+
+      <!-- Placeholder box. FIXME: replace with a real photo -->
+      <div class="photo-placeholder">Photo goes here</div>
+
+      <!-- The real image. Remove the comment marks to use it.
+      <img src="images/your-photo.jpg"
+           alt="Describe what the photo shows">
+      -->
+
+      <!-- Caption and credit. FIXME: fill in once you've picked a photo -->
+      <figcaption>
+        <span class="photo-caption">[What the photo shows]</span>
+        <span class="photo-credit">
+          Photo: [Photographer's name],
+          <a href="[license link]">[license, e.g. CC BY-SA 4.0]</a>,
+          via <a href="[photo's Commons page]">Wikimedia Commons</a>
+        </span>
+      </figcaption>
+    </figure>
+
+
+    <!-- ---------- THE STORY ----------
+         Each <h2> starts a section, each <p> is a paragraph. -->
+    <div class="post-body">
+
+      <p>Lando Norris has the momentum now. He won at Zandvoort for back-to-back victories, beating Kimi Antonelli by over 11 seconds after a late charge on fresher tyres.</p>
+
+      <p>Red Bull had a reshuffled line-up for this one. Isack Hadjar injured his wrist in training and missed the race, so Liam Lawson stepped up from Racing Bulls, with Yuki Tsunoda returning to take Lawson&#x27;s seat.</p>
+
+      <h2>Heartbreak for Verstappen</h2>
+
+      <p>Rain fell just before the race, so it started behind the safety car on dry tyres. Norris kept the lead and Antonelli passed George Russell for second.</p>
+
+      <p>Then, at his home race, Max Verstappen lost control on the damp banked final corner and hit the barrier hard. He was unhurt and took responsibility, but the race was red-flagged. Gabriel Bortoleto also spun avoiding the slowing cars.</p>
+
+      <h2>Antonelli takes over</h2>
+
+      <p>Antonelli got the better launch at the standing restart on lap 5 and took the lead. Arvid Lindblad and Franco Colapinto were later penalised for overtaking under double yellow flags.</p>
+
+      <p>Pit stops shuffled the order several times. Antonelli led through the first round of stops and at half distance, and Lewis Hamilton briefly hit the front when Norris and Antonelli pitted.</p>
+
+      <h2>Norris&#x27;s charge</h2>
+
+      <p>The race was won by staying out. Norris ran a long middle stint and rejoined about five seconds behind Antonelli on fresh hard tyres. He caught him quickly, passed him into Turn 1 on lap 54, then took the lead from Hamilton after Hamilton ran wide at Turn 10.</p>
+
+      <h2>Late twists</h2>
+
+      <p>A virtual safety car on lap 55 let Antonelli switch to softs, and Mercedes ordered Russell to let him through on lap 65. But Antonelli&#x27;s tyres faded, and a second VSC on lap 70, after a collision between the two Williams of Carlos Sainz and Alex Albon, ended any hope of a comeback.</p>
+
+      <!-- YOUR TAKE
+           Space for your own opinion on the race.
+           FIXME: write your take, or delete this box -->
+      <div class="callout">
+        <p><strong>My take:</strong> Add your own thoughts on this race here.</p>
+      </div>
+
+
+      <!-- ---------- RESULTS TABLE ----------
+           From the official classification. class="dnf" dims a
+           row for a driver who didn't finish. -->
+      <h2>Race result</h2>
+
+      <div class="table-wrap">
+        <table class="results">
+          <thead>
+            <tr>
+              <th>Pos</th>
+              <th>Driver</th>
+              <th>Team</th>
+              <th class="num">Gap</th>
+              <th class="num">Pts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Lando Norris</td><td>McLaren</td><td class="num">2:04:44.859</td><td class="num">25</td></tr>
+            <tr><td>2</td><td>Kimi Antonelli</td><td>Mercedes</td><td class="num">+11.536s</td><td class="num">18</td></tr>
+            <tr><td>3</td><td>George Russell</td><td>Mercedes</td><td class="num">+15.906s</td><td class="num">15</td></tr>
+            <tr><td>4</td><td>Lewis Hamilton</td><td>Ferrari</td><td class="num">+16.755s</td><td class="num">12</td></tr>
+            <tr><td>5</td><td>Charles Leclerc</td><td>Ferrari</td><td class="num">+17.258s</td><td class="num">10</td></tr>
+            <tr><td>6</td><td>Oscar Piastri</td><td>McLaren</td><td class="num">+32.332s</td><td class="num">8</td></tr>
+            <tr><td>7</td><td>Liam Lawson</td><td>Red Bull Racing</td><td class="num">+1:19.915</td><td class="num">6</td></tr>
+            <tr><td>8</td><td>Nico Hülkenberg</td><td>Audi</td><td class="num">+1 lap</td><td class="num">4</td></tr>
+            <tr><td>9</td><td>Fernando Alonso</td><td>Aston Martin</td><td class="num">+1 lap</td><td class="num">2</td></tr>
+            <tr><td>10</td><td>Pierre Gasly</td><td>Alpine</td><td class="num">+1 lap</td><td class="num">1</td></tr>
+            <tr><td>11</td><td>Yuki Tsunoda</td><td>Racing Bulls</td><td class="num">+1 lap</td><td class="num">0</td></tr>
+            <tr><td>12</td><td>Arvid Lindblad</td><td>Racing Bulls</td><td class="num">+1 lap</td><td class="num">0</td></tr>
+            <tr><td>13</td><td>Gabriel Bortoleto</td><td>Audi</td><td class="num">+1 lap</td><td class="num">0</td></tr>
+            <tr><td>14</td><td>Franco Colapinto</td><td>Alpine</td><td class="num">+2 laps</td><td class="num">0</td></tr>
+            <tr><td>15</td><td>Sergio Pérez</td><td>Cadillac</td><td class="num">+2 laps</td><td class="num">0</td></tr>
+            <tr><td>16</td><td>Carlos Sainz</td><td>Williams</td><td class="num">+2 laps</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>17</td><td>Alexander Albon</td><td>Williams</td><td class="num">DNF (collision damage)</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>NC</td><td>Valtteri Bottas</td><td>Cadillac</td><td class="num">DNF (hydraulics)</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>NC</td><td>Esteban Ocon</td><td>Haas</td><td class="num">DNF (engine)</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>NC</td><td>Lance Stroll</td><td>Aston Martin</td><td class="num">DNF (handling)</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>NC</td><td>Oliver Bearman</td><td>Haas</td><td class="num">DNF (engine)</td><td class="num">0</td></tr>
+            <tr class="dnf"><td>NC</td><td>Max Verstappen</td><td>Red Bull Racing</td><td class="num">DNF (accident)</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="source-note">NC = not classified, DNS = did not start. Results from the official F1 classification.</p>
+
+    </div>
+
+
+    <!-- ---------- PREVIOUS / NEXT RACE ----------
+         Links to the recaps either side of this one, so readers
+         can click through the season in order.
+         Styled in styles.css, section 12 (.post-nav). -->
+    <nav class="post-nav" aria-label="More recaps">
+      <a class="post-nav-prev" href="recap-hungarian-gp-2026.html"><span>← Previous race</span>Hungary</a>
+      <a class="post-nav-next" href="recap-italian-gp-2026.html"><span>Next race →</span>Italy</a>
+    </nav>
+
+  </article>
+
+
+  <!-- ======================================================
+       FOOTER
+       ====================================================== -->
+  <footer>
+    Unofficial fan site. Not affiliated with Formula 1, Formula One Licensing BV, or the FIA.
+  </footer>
+
+</body>
+</html>

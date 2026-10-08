@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================
+  LIGHTS OUT — Race Recaps page (races.html)
+  ==========================================================
+
+  WHAT THIS PAGE IS
+  -----------------
+  The list of every race recap, newest first. Clicking a card
+  opens that recap's own page.
+
+  This page is plain HTML. Nothing here is automatic: when you
+  publish a new recap, you add its card here by hand.
+
+  ADDING A NEW RECAP
+  ------------------
+  1. Copy one whole card below (from <a class="post-card"> to </a>)
+  2. Paste it at the TOP of the list, so newest stays first
+  3. Change the href to your new recap's file name
+  4. Update the round, location, date, title and teaser
+  5. In the previous recap, point its "Next race" link at the
+     new page (at the bottom of that file)
+
+  SHARED FILES
+  ------------
+  Like every page on the site, this one loads:
+    styles.css  Colors and layout. Section pages are styled in
+                section 13 "SECTION PAGES".
+    script.js   Always animates the start lights in the header.
+                It only fills in live data on pages that have the
+                matching boxes (it checks for their ids first).
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Browser tab text. Format: page name | blog name -->
+  <title>Race Recaps | Lights Out</title>
+
+  <!-- Summary for search engines -->
+  <meta name="description" content="Recaps of every Grand Prix in the 2026 F1 season.">
+
+  <!-- Shared stylesheet, same as every page -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Shared script. "defer" waits until the page is built. -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ======================================================
+       HEADER
+       Identical on every page so the site feels consistent.
+       The only thing that changes is which nav link carries
+       aria-current="page". Here it's "Race Recaps".
+       ====================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Brand links back to the homepage -->
+      <a class="brand" href="index.html">
+        <div class="brand-row">
+          <span class="brand-name">Lights <span>Out</span></span>
+
+          <!-- Start lights, animated by script.js -->
+          <span class="start-lights" aria-hidden="true" title="Replay start">
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+          </span>
+        </div>
+        <span class="tagline">An unofficial fan blog covering the 2026 F1 season</span>
+      </a>
+
+      <!-- Main navigation. Each href is a file in this folder. -->
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="races.html" aria-current="page">Race Recaps</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ======================================================
+       PAGE CONTENT
+       .container centers it; .page adds space above and below.
+       ====================================================== -->
+  <main class="container page">
+
+    <!-- Page title and intro -->
+    <header class="page-header">
+      <span class="eyebrow">2026 Season</span>
+      <h1>Race Recaps</h1>
+      <!-- FIXME: rewrite in your own voice -->
+      <p>Every Grand Prix of the season, broken down: what happened, who won, and what it means for the title fight.</p>
+    </header>
+
+    <!-- THE LIST OF RECAPS
+         Each <a class="post-card"> is one recap. The whole card is
+         a link to that recap's file. Same card style as the
+         homepage grid (styles.css, section 8). -->
+    <div class="post-list">
+
+      <!-- Round 16: Bahrain Grand Prix (in Malaysia) -->
+      <a class="post-card" href="recap-bahrain-gp-malaysia-2026.html">
+        <span class="meta"><span class="tag">Round 16</span> · Bahrain (Sepang) · <time datetime="2026-10-04">October 4</time></span>
+        <h3>Verstappen Ends His Drought in the Sepang Rain</h3>
+        <p>A rain delay, a string of safety cars and a Mercedes power failure. Max finally gets his first win of 2026.</p>
+      </a>
+
+      <!-- Round 15: Azerbaijan Grand Prix -->
+      <a class="post-card" href="recap-azerbaijan-gp-2026.html">
+        <span class="meta"><span class="tag">Round 15</span> · Azerbaijan · <time datetime="2026-09-26">September 26</time></span>
+        <h3>Russell Edges Verstappen by Two Tenths in Baku</h3>
+        <p>Two safety cars, a Piastri mistake and a 0.196-second finish. Russell just holds off Verstappen.</p>
+      </a>
+
+      <!-- Round 14: Spanish Grand Prix -->
+      <a class="post-card" href="recap-spanish-gp-2026.html">
+        <span class="meta"><span class="tag">Round 14</span> · Madrid · <time datetime="2026-09-13">September 13</time></span>
+        <h3>Antonelli Wins the First Race at the Madring</h3>
+        <p>A VSC timed perfectly for Mercedes and a slow McLaren stop hand Antonelli the first win at Madrid&#x27;s new track.</p>
+      </a>
+
+      <!-- Round 13: Italian Grand Prix -->
+      <a class="post-card" href="recap-italian-gp-2026.html">
+        <span class="meta"><span class="tag">Round 13</span> · Italy · <time datetime="2026-09-06">September 6</time></span>
+        <h3>Antonelli Wins Monza From 19th on the Grid</h3>
+        <p>Gasly takes a shock pole, Leclerc crashes out on lap 2, and Antonelli wins at home from 19th.</p>
+      </a>
+
+      <!-- Round 12: Dutch Grand Prix -->
+      <a class="post-card" href="recap-dutch-gp-2026.html">
+        <span class="meta"><span class="tag">Round 12</span> · Netherlands · <time datetime="2026-08-23">August 23</time></span>
+        <h3>Norris Makes It Two in a Row at a Wet Zandvoort</h3>
+        <p>Verstappen crashes out of his home race on lap 1, and Norris charges through on fresh tyres to win again.</p>
+      </a>
+
+      <!-- Round 11: Hungarian Grand Prix -->
+      <a class="post-card" href="recap-hungarian-gp-2026.html">
+        <span class="meta"><span class="tag">Round 11</span> · Hungary · <time datetime="2026-07-26">July 26</time></span>
+        <h3>Norris Finally Wins in Budapest</h3>
+        <p>Norris finally gets his first win as reigning champion, while Piastri&#x27;s race falls apart.</p>
+      </a>
+
+      <!-- Round 10: Belgian Grand Prix -->
+      <a class="post-card" href="recap-belgian-gp-2026.html">
+        <span class="meta"><span class="tag">Round 10</span> · Belgium · <time datetime="2026-07-19">July 19</time></span>
+        <h3>Antonelli Hunts Down Leclerc at Spa</h3>
+        <p>Hamilton takes out Russell on lap 1, then Antonelli reels in Leclerc for the win on the Kemmel Straight.</p>
+      </a>
+
+      <!-- Round 9: British Grand Prix -->
+      <a class="post-card" href="recap-british-gp-2026.html">
+        <span class="meta"><span class="tag">Round 9</span> · Britain · <time datetime="2026-07-05">July 5</time></span>
+        <h3>Leclerc Wins Behind the Safety Car at Silverstone</h3>
+        <p>A Ferrari one-two start, an umbrella on track, and a finish behind the safety car. Leclerc takes his first win of 2026.</p>
+      </a>
+
+      <!-- Round 8: Austrian Grand Prix -->
+      <a class="post-card" href="recap-austrian-gp-2026.html">
+        <span class="meta"><span class="tag">Round 8</span> · Austria · <time datetime="2026-06-28">June 28</time></span>
+        <h3>Russell Holds Off Verstappen at the Red Bull Ring</h3>
+        <p>The top three cross the line within two seconds as Russell holds on at Red Bull&#x27;s home track.</p>
+      </a>
+
+      <!-- Round 7: Barcelona-Catalunya Grand Prix -->
+      <a class="post-card" href="recap-barcelona-gp-2026.html">
+        <span class="meta"><span class="tag">Round 7</span> · Barcelona · <time datetime="2026-06-14">June 14</time></span>
+        <h3>Hamilton Wins at Last: His First Ferrari Victory</h3>
+        <p>Ferrari gambles on three stops in the heat and it pays off. Hamilton finally wins in red.</p>
+      </a>
+
+      <!-- Round 6: Monaco Grand Prix -->
+      <a class="post-card" href="recap-monaco-gp-2026.html">
+        <span class="meta"><span class="tag">Round 6</span> · Monaco · <time datetime="2026-06-07">June 7</time></span>
+        <h3>Antonelli Conquers Monaco With a Grand Slam</h3>
+        <p>A red flag, a flood of penalties and a record-breaking grand slam. Antonelli is now the youngest Monaco winner ever.</p>
+      </a>
+
+      <!-- Round 5: Canadian Grand Prix -->
+      <a class="post-card" href="recap-canadian-gp-2026.html">
+        <span class="meta"><span class="tag">Round 5</span> · Canada · <time datetime="2026-05-24">May 24</time></span>
+        <h3>Antonelli Survives Montreal Mayhem for Four in a Row</h3>
+        <p>Rain, three virtual safety cars and a Russell breakdown. Antonelli wins again, with Hamilton second.</p>
+      </a>
+
+      <!-- Round 4: Miami Grand Prix -->
+      <a class="post-card" href="recap-miami-gp-2026.html">
+        <span class="meta"><span class="tag">Round 4</span> · Miami · <time datetime="2026-05-03">May 3</time></span>
+        <h3>Antonelli Holds Off Norris in Miami for Three Straight</h3>
+        <p>First-lap chaos, an early safety car and a late Norris charge, but Antonelli makes it three wins in a row.</p>
+      </a>
+
+      <!-- Round 3: Japanese Grand Prix -->
+      <a class="post-card" href="recap-japanese-gp-2026.html">
+        <span class="meta"><span class="tag">Round 3</span> · Japan · <time datetime="2026-03-29">March 29</time></span>
+        <h3>Antonelli Makes It Two as a Scary Crash Sparks a Rules Row</h3>
+        <p>Antonelli wins again at Suzuka, but the big story is Bearman&#x27;s crash and what it says about the new energy rules.</p>
+      </a>
+
+      <!-- Round 2: Chinese Grand Prix -->
+      <a class="post-card" href="recap-chinese-gp-2026.html">
+        <span class="meta"><span class="tag">Round 2</span> · China · <time datetime="2026-03-15">March 15</time></span>
+        <h3>Antonelli Takes His First Win in Shanghai</h3>
+        <p>Antonelli goes lights to flag for his first career win, and Hamilton finally gets a Ferrari podium.</p>
+      </a>
+
+      <!-- Round 1: Australian Grand Prix -->
+      <a class="post-card" href="recap-australian-gp-2026.html">
+        <span class="meta"><span class="tag">Round 1</span> · Australia · <time datetime="2026-03-08">March 8</time></span>
+        <h3>Russell Leads a Mercedes One-Two to Open the New Era</h3>
+        <p>The first race of the new era came down to battery boosts, two virtual safety cars and a Ferrari strategy that backfired.</p>
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <!-- ======================================================
+       FOOTER
+       Same disclaimer as every page.
+       ====================================================== -->
+  <footer>
+    Unofficial fan site. Not affiliated with Formula 1, Formula One Licensing BV, or the FIA.
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================
+  LIGHTS OUT — Standings page (standings.html)
+  ==========================================================
+
+  WHAT THIS PAGE IS
+  -----------------
+  The full championship tables: every driver and every team.
+
+  YOU DON'T NEED TO UPDATE THIS PAGE. script.js fills both tables
+  with live data from the Jolpica F1 API every time someone opens
+  it, so they're always current after each race.
+
+  HOW THE LINK TO script.js WORKS HERE
+  ------------------------------------
+  script.js looks for these ids, and fills whichever it finds:
+    drivers-full-body        <tbody> of the drivers' table
+    drivers-full-note        "After round X" line under it
+    constructors-full-body   <tbody> of the teams' table
+    constructors-full-note   "After round X" line under it
+  Each one is flagged "USED BY script.js" below.
+  ⚠ Don't rename or delete those ids, or the tables stop updating.
+
+  TEAM COLORS
+  -----------
+  The colored bar next to each name is added by script.js too.
+  The colors are set in the TEAM_COLORS list in script.js,
+  section 4. That's the place to tweak a color.
+
+  The rows typed in below are FALLBACK placeholders. You only see
+  them if the live data can't be loaded.
+
+  SHARED FILES
+  ------------
+  Like every page on the site, this one loads:
+    styles.css  Colors and layout. Section pages are styled in
+                section 13 "SECTION PAGES".
+    script.js   Always animates the start lights in the header.
+                It only fills in live data on pages that have the
+                matching boxes (it checks for their ids first).
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Browser tab text. Format: page name | blog name -->
+  <title>Standings | Lights Out</title>
+
+  <!-- Summary for search engines -->
+  <meta name="description" content="Live 2026 F1 drivers' and constructors' championship standings.">
+
+  <!-- Shared stylesheet, same as every page -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Shared script. "defer" waits until the page is built. -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ======================================================
+       HEADER
+       Identical on every page so the site feels consistent.
+       The only thing that changes is which nav link carries
+       aria-current="page". Here it's "Standings".
+       ====================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Brand links back to the homepage -->
+      <a class="brand" href="index.html">
+        <div class="brand-row">
+          <span class="brand-name">Lights <span>Out</span></span>
+
+          <!-- Start lights, animated by script.js -->
+          <span class="start-lights" aria-hidden="true" title="Replay start">
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+          </span>
+        </div>
+        <span class="tagline">An unofficial fan blog covering the 2026 F1 season</span>
+      </a>
+
+      <!-- Main navigation. Each href is a file in this folder. -->
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="races.html">Race Recaps</a></li>
+          <li><a href="standings.html" aria-current="page">Standings</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ======================================================
+       PAGE CONTENT
+       .container centers it; .page adds space above and below.
+       ====================================================== -->
+  <main class="container page">
+
+    <!-- Page title and intro -->
+    <header class="page-header">
+      <span class="eyebrow">2026 Season</span>
+      <h1>Championship Standings</h1>
+      <p>The full drivers' and constructors' tables, updated automatically after every race.</p>
+    </header>
+
+    <!-- Two tables side by side; they stack on smaller screens.
+         .standings-grid is in styles.css, section 13. -->
+    <div class="standings-grid">
+
+      <!-- ---------- DRIVERS' CHAMPIONSHIP ----------
+           Uses the same .sidebar-box and .standings styles as the
+           homepage sidebar (styles.css, sections 9 and 10).
+           script.js section 5 fills it: every driver, with wins,
+           and a colored bar in their team's color by each name. -->
+      <section class="sidebar-box" aria-labelledby="drivers-heading">
+        <h2 id="drivers-heading">Drivers</h2>
+
+        <table class="standings">
+          <!-- Column headings. class="num" right-aligns a column. -->
+          <thead>
+            <tr><th></th><th>Driver</th><th class="num">Wins</th><th class="num">Pts</th></tr>
+          </thead>
+
+          <!-- Placeholder rows, replaced by live data.
+               USED BY script.js -->
+          <tbody id="drivers-full-body">
+            <tr><td class="pos">1</td><td>Driver name</td><td class="pts">0</td><td class="pts">0</td></tr>
+            <tr><td class="pos">2</td><td>Driver name</td><td class="pts">0</td><td class="pts">0</td></tr>
+            <tr><td class="pos">3</td><td>Driver name</td><td class="pts">0</td><td class="pts">0</td></tr>
+          </tbody>
+        </table>
+
+        <!-- Data credit. script.js adds "After round X" in front.
+             USED BY script.js -->
+        <p class="standings-note" id="drivers-full-note">
+          Data: <a href="https://github.com/jolpica/jolpica-f1">Jolpica F1</a>
+        </p>
+      </section>
+
+      <!-- ---------- CONSTRUCTORS' CHAMPIONSHIP ----------
+           script.js section 6 fills it: every team, with wins,
+           and a colored bar in the team's color by each name. -->
+      <section class="sidebar-box" aria-labelledby="constructors-heading">
+        <h2 id="constructors-heading">Constructors</h2>
+
+        <table class="standings">
+          <thead>
+            <tr><th></th><th>Team</th><th class="num">Wins</th><th class="num">Pts</th></tr>
+          </thead>
+
+          <!-- Placeholder rows, replaced by live data.
+               USED BY script.js -->
+          <tbody id="constructors-full-body">
+            <tr><td class="pos">1</td><td>Team name</td><td class="pts">0</td><td class="pts">0</td></tr>
+            <tr><td class="pos">2</td><td>Team name</td><td class="pts">0</td><td class="pts">0</td></tr>
+            <tr><td class="pos">3</td><td>Team name</td><td class="pts">0</td><td class="pts">0</td></tr>
+          </tbody>
+        </table>
+
+        <!-- Data credit.  USED BY script.js -->
+        <p class="standings-note" id="constructors-full-note">
+          Data: <a href="https://github.com/jolpica/jolpica-f1">Jolpica F1</a>
+        </p>
+      </section>
+
+    </div>
+
+
+  </main>
+
+
+  <!-- ======================================================
+       FOOTER
+       Same disclaimer as every page.
+       ====================================================== -->
+  <footer>
+    Unofficial fan site. Not affiliated with Formula 1, Formula One Licensing BV, or the FIA.
+  </footer>
+
+</body>
+</html>

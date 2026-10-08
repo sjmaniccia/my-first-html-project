@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================
+  LIGHTS OUT — Homepage (index.html)
+  ==========================================================
+
+  HOW THIS SITE IS SPLIT UP
+  -------------------------
+  The site uses three files. Keep them in the same folder.
+
+    index.html  (this file)  WHAT is on the page: text, links, boxes.
+    styles.css               HOW it looks: colors, sizes, layout.
+    script.js                WHAT IT DOES: animations and live data.
+
+  You never need to edit script.js. It runs automatically when
+  the page loads. Everything you'd normally change (post titles,
+  intro text, nav links) lives right here in the HTML.
+
+  HOW THE THREE FILES CONNECT
+  ---------------------------
+  1. Classes  (class="...")
+     These link HTML elements to styles in styles.css.
+     Example: class="btn" here picks up the ".btn" rules there.
+     Several elements can share one class.
+
+  2. IDs  (id="...")
+     These are unique name tags that let script.js find one
+     specific element and change it.
+     Example: id="next-race-name" is how script.js knows where
+     to write the race name.
+     ⚠ If you rename or delete an id, script.js can't find that
+       spot anymore and that part of the page stops updating.
+       Every id the script depends on is flagged below with
+       "USED BY script.js".
+
+  3. The <link> and <script> tags in <head>
+     These tell the browser to load the other two files.
+
+  WHAT script.js DOES ON THIS PAGE
+  --------------------------------
+  - Animates the five start lights in the header
+  - Fetches the season schedule and fills in the Next Race box
+  - Runs the countdown timer, updating it every second
+  - Fetches the drivers' standings and fills in the table
+
+  The live data comes from the free Jolpica F1 API.
+  If it can't be reached, the placeholder text in this file
+  simply stays on the page, so nothing ever looks broken.
+-->
+<html lang="en">
+<head>
+  <!-- Character set: lets the page show symbols like · and → -->
+  <meta charset="UTF-8">
+
+  <!-- Makes the page fit phone screens instead of shrinking -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Text shown in the browser tab and in search results -->
+  <title>Lights Out | 2026 F1 Season Blog</title>
+
+  <!-- Short summary that search engines may show under the title -->
+  <meta name="description" content="An unofficial fan blog covering the 2026 F1 season: race recaps, standings, drivers and teams.">
+
+  <!--
+    LINK TO THE STYLESHEET
+    Loads styles.css so the page gets its colors and layout.
+    href is the file path. Since it's just a file name, the
+    browser looks in the same folder as this HTML file.
+  -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!--
+    LINK TO THE SCRIPT
+    Loads script.js, which adds the animation and live data.
+
+    "defer" is important. Without it, the browser would run the
+    script immediately, before the rest of this page exists, and
+    the script wouldn't find the elements it needs. With defer,
+    the browser downloads the script right away but waits until
+    the whole page is built before running it.
+
+    Because of defer, this tag can safely sit up here in <head>.
+  -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ======================================================
+       HEADER
+       Brand name, start lights, tagline and main navigation.
+       Styled in styles.css, section 4 "HEADER".
+       ====================================================== -->
+  <header class="site-header">
+
+    <!-- Wrapper that puts the brand on the left and the nav on
+         the right, and wraps them onto two lines on phones -->
+    <div class="header-inner">
+
+      <!-- BRAND
+           The whole block is one link back to the homepage ("/"). -->
+      <a class="brand" href="index.html">
+
+        <!-- Row holding the name and the start lights side by side -->
+        <div class="brand-row">
+
+          <!-- Blog name. The inner <span> around "Out" is what
+               styles.css colors red (rule: .brand-name span). -->
+          <span class="brand-name">Lights <span>Out</span></span>
+
+          <!--
+            START LIGHTS (animated by script.js, section 1)
+
+            Five empty <span>s, each drawn as a dark circle by the
+            ".light" class in styles.css.
+
+            How the animation works:
+              - script.js adds the class "on" to each light, one at
+                a time. ".light.on" in styles.css turns it red.
+              - After a random pause, script.js removes "on" from
+                all five at once. That's "lights out."
+              - Clicking the lights runs it again.
+
+            class="start-lights" is how script.js finds this group
+            (USED BY script.js). Keep exactly five .light spans.
+
+            aria-hidden="true" tells screen readers to skip this,
+            since it's decoration and has no text to read out.
+            title shows "Replay start" when you hover over it.
+          -->
+          <span class="start-lights" aria-hidden="true" title="Replay start">
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+            <span class="light"></span>
+          </span>
+        </div>
+
+        <!-- Tagline under the name. Writing "F1" in plain text to
+             describe your topic is fine; just don't use F1's logo. -->
+        <span class="tagline">An unofficial fan blog covering the 2026 F1 season</span>
+      </a>
+
+      <!-- MAIN NAVIGATION
+           Every page has this same menu.
+           Each href is just a file name, so the browser opens that
+           file from the same folder as this one.
+
+           aria-label names this menu for screen readers.
+           aria-current="page" marks the page you're on now; it's
+           also what turns that link red in styles.css.
+           Each page puts aria-current on its own link. -->
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="races.html">Race Recaps</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ======================================================
+       HERO
+       Big intro block at the top of the homepage.
+       Pure HTML, no script involved. Edit the text freely.
+       Styled in styles.css, sections 5 "HERO" and 6 "BUTTONS".
+       ====================================================== -->
+  <section class="hero">
+
+    <!-- .container centers the content and caps its width -->
+    <div class="container">
+
+      <!-- Small red label above the headline -->
+      <span class="eyebrow">2026 Season</span>
+
+      <!-- Main headline. Only use one <h1> per page. -->
+      <h1>Every race. Every result. No fluff.</h1>
+
+      <!-- FIXME: rewrite this intro in your own voice -->
+      <p>Race recaps, standings and takes on the new era of F1, written by a fan for fans.</p>
+
+      <!-- Two buttons: "btn" is solid red, adding "btn-ghost"
+           makes the second one an outline instead -->
+      <a class="btn" href="races.html">Latest Recaps</a>
+      <a class="btn btn-ghost" href="standings.html">Standings</a>
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       MAIN CONTENT
+       Two columns: posts on the left, sidebar on the right.
+       ".layout" in styles.css (section 7) creates the columns
+       and stacks them into one column on screens under 800px.
+       ====================================================== -->
+  <main>
+    <div class="container layout">
+
+
+      <!-- ---------- LEFT COLUMN: POSTS ----------
+           Pure HTML, no script involved.
+           You update these by hand when you publish a post.
+           Styled in styles.css, section 8 "POST CARDS".
+
+           aria-labelledby links this section to its heading
+           (id="latest-heading") so screen readers announce it. -->
+      <section aria-labelledby="latest-heading">
+
+        <!-- Section heading with an "All posts" link on the right -->
+        <div class="section-title">
+          <h2 id="latest-heading">Latest</h2>
+          <a href="races.html">All 16 recaps →</a>
+        </div>
+
+        <!-- FEATURED POST
+             Your newest or biggest story. The whole card is a link.
+             href points to the recap file in this same folder.
+             When you publish a newer recap, update this card to
+             point to it and move this one down into the grid. -->
+        <a class="featured" href="recap-bahrain-gp-malaysia-2026.html">
+          <!-- Category and date. The "tag" span is colored red. -->
+          <span class="meta"><span class="tag">Race Recap</span> · Oct 4, 2026</span>
+          <h3>Verstappen Ends His Drought in the Sepang Rain</h3>
+          <p>A rain delay, a string of safety cars and a Mercedes power failure. Max finally gets his first win of 2026.</p>
+        </a>
+
+        <!-- RECENT POSTS GRID
+             Each <a class="post-card"> is one card linking to a post.
+             To add a post, copy a whole card (from <a> to </a>),
+             paste it at the top of the grid, and edit it.
+             The grid fits as many columns as the screen allows. -->
+        <div class="post-grid">
+
+          <!-- Horner and Ferrari (news.html lists it too) -->
+          <a class="post-card" href="news-horner-ferrari.html">
+            <span class="meta"><span class="tag">Rumour Mill</span> · Oct 8, 2026</span>
+            <h3>Christian Horner to Ferrari? Here's What We Actually Know</h3>
+            <p>Horner says Ferrari is his dream job, and Ferrari's season has gone flat.</p>
+          </a>
+
+          <!-- Audi's first season (news.html lists it too) -->
+          <a class="post-card" href="news-audi-first-season.html">
+            <span class="meta"><span class="tag">Teams</span> · Oct 8, 2026</span>
+            <h3>Audi's First Season: Slow Start, Big Plans</h3>
+            <p>A rough start, signs of life since summer, and a target of 2030.</p>
+          </a>
+
+          <!-- Engine rules hot take (news.html lists it too) -->
+          <a class="post-card" href="news-engine-rules-v8.html">
+            <span class="meta"><span class="tag">Hot Take</span> · Oct 8, 2026</span>
+            <h3>The 2026 Engines Aren't Working. Bring Back the V8s.</h3>
+            <p>The new hybrid rules have mostly given us battery management. Time for V8s.</p>
+          </a>
+
+          <!-- Link to the full standings -->
+          <a class="post-card" href="standings.html">
+            <span class="meta"><span class="tag">Standings</span> · Live</span>
+            <h3>Full Championship Tables</h3>
+            <p>Every driver and team, updated automatically after each race.</p>
+          </a>
+
+        </div>
+      </section>
+
+
+      <!-- ---------- RIGHT COLUMN: SIDEBAR ---------- -->
+      <aside>
+
+        <!--
+          NEXT RACE BOX  (filled in by script.js, section 3)
+
+          You don't edit this box. Here's what happens on load:
+            1. script.js downloads this season's race schedule.
+            2. It finds the first race that hasn't finished yet.
+            3. It writes that race's details into the elements
+               below, finding each one by its id.
+            4. It starts the countdown and updates it every second.
+
+          The text currently written here ("Next Grand Prix",
+          "Circuit", "--" etc.) is a FALLBACK. You only see it if
+          the data can't be loaded, e.g. the API is down.
+
+          Styled in styles.css, section 9.
+        -->
+        <div class="sidebar-box">
+          <h2>Next Race</h2>
+
+          <!-- "Round 19" label. Starts empty, so styles.css hides it
+               until script.js fills it in.  USED BY script.js -->
+          <p class="race-round" id="race-round"></p>
+
+          <!-- Race name, e.g. "Mexico City Grand Prix"
+               USED BY script.js -->
+          <p class="next-race-name" id="next-race-name">Next Grand Prix</p>
+
+          <!-- Circuit name and city/country, one per line -->
+          <p class="next-race-location">
+            <!-- e.g. "Autódromo Hermanos Rodríguez"  USED BY script.js -->
+            <span id="next-race-circuit">Circuit</span>
+            <!-- e.g. "Mexico City, Mexico". The red ◉ marker in
+                 front comes from styles.css.  USED BY script.js -->
+            <span id="next-race-location">Location TBD</span>
+          </p>
+
+          <!-- Date and start time, shown in the visitor's own time
+               zone. Changes to "Race in progress" once the race
+               starts.  USED BY script.js -->
+          <p class="next-race-date" id="race-date-label">Date TBD</p>
+
+          <!-- COUNTDOWN
+               Four tiles. script.js rewrites the number inside each
+               <strong> every second. The <span> labels never change.
+
+               class="countdown" is also USED BY script.js: it hides
+               the whole countdown once the season is over.
+
+               aria-live="off" stops screen readers from announcing
+               every single tick. -->
+          <div class="countdown" aria-live="off">
+            <div><strong id="cd-days">--</strong><span>Days</span></div>   <!-- USED BY script.js -->
+            <div><strong id="cd-hours">--</strong><span>Hrs</span></div>  <!-- USED BY script.js -->
+            <div><strong id="cd-mins">--</strong><span>Min</span></div>   <!-- USED BY script.js -->
+            <div><strong id="cd-secs">--</strong><span>Sec</span></div>   <!-- USED BY script.js -->
+          </div>
+        </div>
+
+
+        <!--
+          DRIVERS' STANDINGS BOX  (filled in by script.js, section 5)
+
+          You don't edit this box either. On load:
+            1. script.js downloads the current championship table.
+            2. It deletes the five placeholder rows below.
+            3. It builds new rows for the top 5 drivers: position,
+               name, current team, points.
+            4. It updates the note under the table to say which
+               round the standings are from.
+
+          If the data can't be loaded, the placeholder rows stay.
+
+          To show more or fewer drivers, change the "limit: 5" on
+          the standings-body line of DRIVER_TABLES, near the start
+          of section 5 in script.js. It's the only setting there
+          you'd ever need to touch.
+
+          The full table with every driver is on standings.html.
+
+          THE WHOLE BOX IS A LINK to standings.html.
+          How: the heading is a normal link, and the "box-link"
+          class in styles.css (section 10) stretches that link's
+          clickable area over the entire box. The Jolpica F1 credit
+          link at the bottom sits on top, so it still works on its own.
+          (A box like this can't simply be wrapped in one big <a>,
+          because HTML doesn't allow a link inside another link.)
+
+          Styled in styles.css, section 10.
+        -->
+        <div class="sidebar-box box-link">
+          <h2>
+            <a class="box-link-target" href="standings.html">Drivers' Standings <span aria-hidden="true">→</span></a>
+          </h2>
+
+          <table class="standings">
+            <!-- Column headings: position (blank), driver, points -->
+            <thead>
+              <tr><th></th><th>Driver</th><th>Pts</th></tr>
+            </thead>
+
+            <!-- The rows. script.js finds this <tbody> by its id,
+                 empties it, and fills it with real rows.
+                 USED BY script.js -->
+            <tbody id="standings-body">
+              <tr><td class="pos">1</td><td>Driver name</td><td class="pts">0</td></tr>
+              <tr><td class="pos">2</td><td>Driver name</td><td class="pts">0</td></tr>
+              <tr><td class="pos">3</td><td>Driver name</td><td class="pts">0</td></tr>
+              <tr><td class="pos">4</td><td>Driver name</td><td class="pts">0</td></tr>
+              <tr><td class="pos">5</td><td>Driver name</td><td class="pts">0</td></tr>
+            </tbody>
+          </table>
+
+          <!-- Credit to the data source. script.js adds
+               "After round X ·" in front once data loads.
+               USED BY script.js -->
+          <p class="standings-note" id="standings-note">
+            Data: <a href="https://github.com/jolpica/jolpica-f1">Jolpica F1</a>
+          </p>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+
+  <!-- ======================================================
+       FOOTER
+       Pure HTML. The disclaimer makes clear this isn't an
+       official F1 site, which matters for trademark reasons.
+       Styled in styles.css, section 11.
+       ====================================================== -->
+  <footer>
+    Unofficial fan site. Not affiliated with Formula 1, Formula One Licensing BV, or the FIA.
+  </footer>
+
+</body>
+</html>
